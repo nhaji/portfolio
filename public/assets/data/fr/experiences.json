@@ -1,0 +1,154 @@
+[
+  {
+    "id": 1,
+    "title": "Chef de projet technique",
+    "company": "Sacem Paris",
+    "location": "Paris",
+    "period": { "start": "2023-04-01", "isCurrent": true },
+    "description": "A la tête d'une équipe de sept ingénieurs, nous avons mis en place la pipeline d'intégration et déploiement continus (CI/CD) basées sur la branche principale, avec un système de feature flag. Nous avons aussi migré le code existant des versions obsolètes vers les versions LTS et finalement on a conçu et développé de nouveaux microservices déployés sur ECS.",
+    "tags": [
+      "Java",
+      "Spring",
+      "AWS",
+      "Gitlab",
+      "SonarQube",
+      "Testcontainers",
+      "OracleDB",
+      "Docker",
+      "Debian",
+      "Jira"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Ingénieur étude et developemment senior",
+    "company": "Malakoff Humanis Paris",
+    "location": "Paris",
+    "period": { "start": "2022-07-01", "end": "2023-03-31", "isCurrent": false },
+    "description": "Développeur senior au sein d'une équipe de cinq ingénieurs. Nous avons conçu et développé l'API principale et les connecteurs permettant l'interaction avec une API externe gérant le processus de souscription d'assurance.",
+    "tags": [
+      "Java",
+      "Spring",
+      "Angular",
+      "PostgreSQL",
+      "Debian",
+      "Gitlab",
+      "Jenkins",
+      "Nexus",
+      "Jira",
+      "Confluence"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Ingénieur étude et developemment senior",
+    "company": "EDF Paris",
+    "location": "Paris",
+    "period": { "start": "2021-12-01", "end": "2022-06-30", "isCurrent": false },
+    "description": "Développeur senior au sein d'une équipe de deux ingénieurs. Nous avons conçu et développé une architecture événementielle permettant l'interaction avec toutes les API du système d'information interne.",
+    "tags": [
+      "Java",
+      "Spring",
+      "Artemis",
+      "Angular",
+      "Jenkins",
+      "Nexus",
+      "SVN",
+      "Oracle",
+      "Debian",
+      "Jira"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Chef de projet technique",
+    "company": "Binarios IT Casablanca",
+    "location": "Casablanca",
+    "period": { "start": "2020-10-01", "end": "2021-07-31", "isCurrent": false },
+    "description": "A la tête d'une équipe de six ingénieurs, nous avons conçu et développé une architecture de microservices pour un ERP dans le secteur de la santé.",
+    "tags": [
+      "Java",
+      "Spring",
+      "Angular",
+      "PostgreSQL",
+      "BitBucket",
+      "Jenkins",
+      "Nexus",
+      "Minio",
+      "Graylog",
+      "Jasper",
+      "Squash",
+      "SonarQube",
+      "PostgreSQL",
+      "Debian",
+      "Jira",
+      "Confluence"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Tech Lead",
+    "company": "CEGEDIM Rabat",
+    "location": "Rabat",
+    "period": { "start": "2020-07-01", "end": "2020-09-30", "isCurrent": false },
+    "description": "A la tête d'une équipe de trois ingénieurs, nous avons mis en œuvre un POC pour le transfert de code de SVN vers Git et un autre pour la migration d'un projet AngularJS vers une base de code Angular.",
+    "tags": [
+      "Java",
+      "Spring",
+      "Angular",
+      "OracleDB",
+      "Gitlab",
+      "Jenkins",
+      "Nexus",
+      "Squash",
+      "SonarQube",
+      "PostgreSQL",
+      "Debian",
+      "Jira"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Tech Lead",
+    "company": "Leyton Casablanca",
+    "location": "Casablanca",
+    "period": { "start": "2018-11-01", "end": "2020-06-30", "isCurrent": false },
+    "description": "A la tête de deux équipes de huit ingénieurs, nous avons conçu et développé une architecture de microservices pour un système de négociation de certificats d'énergie et un autre système de gestion des arrêts maladie.",
+    "tags": [
+      "Java",
+      "Spring",
+      "Kafka",
+      "Minio",
+      "Keycloak",
+      "Docker",
+      "Drools",
+      "Angular",
+      "Graylog",
+      "Gatling",
+      "Squash",
+      "SonarQube",
+      "PostgreSQL",
+      "Debian",
+      "Jira",
+      "Confluence"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Ingénieur étude et developemment",
+    "company": "Insoft Saphir Casablanca",
+    "location": "Casablanca",
+    "period": { "start": "2017-07-01", "end": "2018-10-31", "isCurrent": false },
+    "description": "Au sein d'une équipe de trois développeurs, nous avons conçu et développé un système de gestion de la chaîne d'approvisionnement et une application mobile gérant les E-wallet.",
+    "tags": ["Java", "Spring", "Angular", "Ionic", "MSSQL", "Gitblit", "Redmine"]
+  },
+  {
+    "id": 8,
+    "title": "Chef de projet technique",
+    "company": "Utopie Casablanca",
+    "location": "Casablanca",
+    "period": { "start": "2017-02-01", "end": "2017-06-30", "isCurrent": false },
+    "description": "A la tête d'une équipe de trois ingénieurs, nous avons conçu et développé un système de point de vente.",
+    "tags": ["Java", "JavaFX", "Spring", "VueJS", "Swift", "MySQL", "Debian", "Jira"]
+  }
+]

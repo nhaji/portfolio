@@ -1,0 +1,5 @@
+[
+  { "id": 1, "icon": "trending_up", "value": "9+", "type": "YEARS_EXP" },
+  { "id": 2, "icon": "lightbulb", "value": "15", "type": "PROJECTS" },
+  { "id": 3, "icon": "group", "value": "7", "type": "TEAMS_LED" }
+]

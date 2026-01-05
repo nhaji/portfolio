@@ -1,0 +1,7 @@
+<mat-card
+  class="p-8 text-center bg-red-50 text-red-600 rounded-xl border border-red-200 animate-fade-in shadow-sm"
+>
+  <mat-icon class="text-5xl h-12 w-12 mx-auto mb-4 text-red-500">error_outline</mat-icon>
+  <p class="text-lg font-bold">{{ message() | translate }}</p>
+  <p class="text-sm text-red-500 mt-2" *ngIf="details()">{{ details() }}</p>
+</mat-card>

@@ -1,0 +1,56 @@
+ <button mat-fab class="settings-fab !fixed bottom-6 right-6 z-50" (click)="toggleSettings()">
+    <mat-icon class="fab-icon">settings</mat-icon>
+  </button>
+
+  @if (showSettingsPanel) {
+    <div class="settings-panel animate-slide-up fixed bottom-24 right-6 z-50 w-80">
+      <!-- Theme Switcher -->
+      <div class="settings-panel-section">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <mat-icon class="m-3 settings-theme-icon">{{ isDarkMode() ? 'dark_mode' : 'light_mode' }}</mat-icon>
+            <span class="settings-panel-title">{{ 'APP.THEME' | translate }}</span>
+          </div>
+          <mat-slide-toggle
+            [checked]="isDarkMode()"
+            (change)="toggleTheme()"
+            color="primary"
+            class="settings-theme-toggle"
+          >
+          </mat-slide-toggle>
+        </div>
+        <p class="settings-panel-description ml-10 mt-7">{{ 'APP.THEME_DESCRIPTION' | translate }}</p>
+      </div>
+
+      <!-- Language Selector -->
+      <div class="p-6">
+        <div class="flex items-center mb-4">
+          <mat-icon class="m-3 settings-language-icon">language</mat-icon>
+          <span class="settings-panel-title">{{ 'APP.LANGUAGE' | translate }}</span>
+        </div>
+        
+        <div class="settings-language-grid ml-10">
+          @for (language of languages(); track language.code) {
+            <button
+              mat-flat-button
+              [class]="'settings-language-button !rounded-lg !py-3 !transition-all !duration-300 ' + 
+                       (currentLang() === language.code ? 'settings-language-button-active' : 'settings-language-button-inactive')"
+              (click)="changeLanguage(language.code)"
+            >
+              <div class="settings-language-content">
+                <span class="settings-language-label">{{ language.label }}</span>
+                <span class="settings-language-code">{{ language.code }}</span>
+              </div>
+            </button>
+          }
+        </div>
+      </div>
+
+      <!-- Close Button -->
+      <div class="settings-panel-close-section">
+        <button mat-button (click)="toggleSettings()" class="!font-medium !rounded-full !px-6">
+          {{ 'COMMON.CLOSE' | translate }}
+        </button>
+      </div>
+    </div>
+  }

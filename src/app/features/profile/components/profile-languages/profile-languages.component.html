@@ -1,0 +1,11 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  @for (lang of languages(); track lang.name) {
+  <div class="flex flex-grow items-center gap-3 p-3 card card-primary card-shake">
+    <mat-icon class="profile-language-card-icon">{{ getLanguageIcon(lang.level) }}</mat-icon>
+    <div class="flex-grow">
+      <p class="profile-language-card-name">{{ lang.name }}</p>
+      <p class="profile-language-card-level">{{ 'LANGUAGE.' + lang.level | translate }}</p>
+    </div>
+  </div>
+  }
+</div>

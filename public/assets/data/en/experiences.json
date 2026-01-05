@@ -1,0 +1,154 @@
+[
+  {
+    "id": 1,
+    "title": "Technical Project Manager",
+    "company": "Sacem Paris",
+    "location": "Paris",
+    "period": { "start": "2023-04-01", "isCurrent": true },
+    "description": "Leading a CRM team of seven engineers. We implemented a trunk based CI/CD with feature flag option. We moved the legacy code from deprecated version to the LTS versions and we designed and developed new microservices deployed in ECS.",
+    "tags": [
+      "Java",
+      "Spring",
+      "AWS",
+      "Gitlab",
+      "SonarQube",
+      "Testcontainers",
+      "OracleDB",
+      "Docker",
+      "Debian",
+      "Jira"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Senior Software Developer",
+    "company": "Malakoff Humanis Paris",
+    "location": "Paris",
+    "period": { "start": "2022-07-01", "end": "2023-03-31", "isCurrent": false },
+    "description": "Senior developer within a team of five engineers. We designed and developed the main API and connectors enabling interaction with an external API managing the insurance subscription process.",
+    "tags": [
+      "Java",
+      "Spring",
+      "Angular",
+      "PostgreSQL",
+      "Debian",
+      "Gitlab",
+      "Jenkins",
+      "Nexus",
+      "Jira",
+      "Confluence"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Senior Software Developer",
+    "company": "EDF Paris",
+    "location": "Paris",
+    "period": { "start": "2021-12-01", "end": "2022-06-30", "isCurrent": false },
+    "description": "Senior developer within a two-engineer team. We designed and developed an event-driven architecture enabling interaction with all APIs of the internal information system.",
+    "tags": [
+      "Java",
+      "Spring",
+      "Artemis",
+      "Angular",
+      "Jenkins",
+      "Nexus",
+      "SVN",
+      "Oracle",
+      "Debian",
+      "Jira"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Technical Project Manager",
+    "company": "Binarios IT Casablanca",
+    "location": "Casablanca",
+    "period": { "start": "2020-10-01", "end": "2021-07-31", "isCurrent": false },
+    "description": "Leading a team of six engineers. We designed and developed a microservice architecture for an ERP system in the healthcare field.",
+    "tags": [
+      "Java",
+      "Spring",
+      "Angular",
+      "PostgreSQL",
+      "BitBucket",
+      "Jenkins",
+      "Nexus",
+      "Minio",
+      "Graylog",
+      "Jasper",
+      "Squash",
+      "SonarQube",
+      "PostgreSQL",
+      "Debian",
+      "Jira",
+      "Confluence"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Technical Lead",
+    "company": "CEGEDIM Rabat",
+    "location": "Rabat",
+    "period": { "start": "2020-07-01", "end": "2020-09-30", "isCurrent": false },
+    "description": "Leading a team of three engineers. We implemented a POC for transferring code from SVN to Git and another one for migrating an AngularJS project to Angular code base.",
+    "tags": [
+      "Java",
+      "Spring",
+      "Angular",
+      "OracleDB",
+      "Gitlab",
+      "Jenkins",
+      "Nexus",
+      "Squash",
+      "SonarQube",
+      "PostgreSQL",
+      "Debian",
+      "Jira"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Technical Lead",
+    "company": "Leyton Casablanca",
+    "location": "Casablanca",
+    "period": { "start": "2018-11-01", "end": "2020-06-30", "isCurrent": false },
+    "description": "Leading a two teams of eight engineers. We designed and developed a microservice architecture for an energy certificate trade system and another system for managing the sick leave.",
+    "tags": [
+      "Java",
+      "Spring",
+      "Kafka",
+      "Minio",
+      "Keycloak",
+      "Docker",
+      "Drools",
+      "Angular",
+      "Graylog",
+      "Gatling",
+      "Squash",
+      "SonarQube",
+      "PostgreSQL",
+      "Debian",
+      "Jira",
+      "Confluence"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Software Developer",
+    "company": "Insoft Saphir Casablanca",
+    "location": "Casablanca",
+    "period": { "start": "2017-07-01", "end": "2018-10-31", "isCurrent": false },
+    "description": "Within a team of three developers we designed and developed a supply chain management system and a E-Wallet mobile app.",
+    "tags": ["Java", "Spring", "Angular", "Ionic", "MSSQL", "Gitblit", "Redmine"]
+  },
+  {
+    "id": 8,
+    "title": "Technical Project Manager",
+    "company": "Utopie Casablanca",
+    "location": "Casablanca",
+    "period": { "start": "2017-02-01", "end": "2017-06-30", "isCurrent": false },
+    "description": "Leading a team of three engineers. We designed and developed a Point of sale system.",
+    "tags": ["Java", "JavaFX", "Spring", "VueJS", "Swift", "MySQL", "Debian", "Jira"]
+  }
+]

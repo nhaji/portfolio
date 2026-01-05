@@ -1,0 +1,15 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  @for (contact of contacts(); track contact.label) {
+  <a
+    [href]="contact.link || '#'"
+    [target]="contact.link ? '_blank' : '_self'"
+    [attr.aria-label]="contact.label"
+    matRipple
+  >
+    <div class="flex flex-grow items-center gap-3 p-3 card card-secondary card-shake">
+      <mat-icon class="profile-contact-card-icon">{{ getIcon(contact.type) }}</mat-icon>
+      <span class="profile-contact-card-text">{{ contact.value }}</span>
+    </div>
+  </a>
+  }
+</div>

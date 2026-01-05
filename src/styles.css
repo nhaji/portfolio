@@ -1,0 +1,477 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*By default only used CSS variables will be generated in the final CSS output. 
+If you want to always generate all CSS variables, you can use the static theme option*/
+@theme {
+  --color-primary-50: var(--color-green-50);
+  --color-primary-100: var(--color-green-100);
+  --color-primary-200: var(--color-green-200);
+  --color-primary-300: var(--color-green-300);
+  --color-primary-400: var(--color-green-400);
+  --color-primary-500: var(--color-green-500);
+  --color-primary-600: var(--color-green-600);
+  --color-primary-700: var(--color-green-700);
+  --color-primary-800: var(--color-green-800);
+  --color-primary-900: var(--color-green-900);
+  --color-primary-950: var(--color-green-950);
+
+  --color-secondary-50: var(--color-blue-50);
+  --color-secondary-100: var(--color-blue-100);
+  --color-secondary-200: var(--color-blue-200);
+  --color-secondary-300: var(--color-blue-300);
+  --color-secondary-400: var(--color-blue-400);
+  --color-secondary-500: var(--color-blue-500);
+  --color-secondary-600: var(--color-blue-600);
+  --color-secondary-700: var(--color-blue-700);
+  --color-secondary-800: var(--color-blue-800);
+  --color-secondary-900: var(--color-blue-900);
+  --color-secondary-950: var(--color-blue-950);
+
+  --color-tertiary-50: var(--color-yellow-50);
+  --color-tertiary-100: var(--color-yellow-100);
+  --color-tertiary-200: var(--color-yellow-200);
+  --color-tertiary-300: var(--color-yellow-300);
+  --color-tertiary-400: var(--color-yellow-400);
+  --color-tertiary-500: var(--color-yellow-500);
+  --color-tertiary-600: var(--color-yellow-600);
+  --color-tertiary-700: var(--color-yellow-700);
+  --color-tertiary-800: var(--color-yellow-800);
+  --color-tertiary-900: var(--color-yellow-900);
+  --color-tertiary-950: var(--color-yellow-950);
+
+  --color-quaternary-50: var(--color-purple-50);
+  --color-quaternary-100: var(--color-purple-100);
+  --color-quaternary-200: var(--color-purple-200);
+  --color-quaternary-300: var(--color-purple-300);
+  --color-quaternary-400: var(--color-purple-400);
+  --color-quaternary-500: var(--color-purple-500);
+  --color-quaternary-600: var(--color-purple-600);
+  --color-quaternary-700: var(--color-purple-700);
+  --color-quaternary-800: var(--color-purple-800);
+  --color-quaternary-900: var(--color-purple-900);
+  --color-quaternary-950: var(--color-purple-950);
+
+  --color-quinary-50: var(--color-red-50);
+  --color-quinary-100: var(--color-red-100);
+  --color-quinary-200: var(--color-red-200);
+  --color-quinary-300: var(--color-red-300);
+  --color-quinary-400: var(--color-red-400);
+  --color-quinary-500: var(--color-red-500);
+  --color-quinary-600: var(--color-red-600);
+  --color-quinary-700: var(--color-red-700);
+  --color-quinary-800: var(--color-red-800);
+  --color-quinary-900: var(--color-red-900);
+  --color-quinary-950: var(--color-red-950);
+}
+
+@layer components {
+  .card {
+    @apply transition-all duration-700 ease-in-out;
+    @apply rounded-xl;
+  }
+
+  .card-primary {
+    @apply bg-primary-50 text-gray-700;
+    @apply dark:bg-primary-900/50 dark:text-primary-100;
+    @apply hover:bg-primary-100 dark:hover:bg-primary-700;
+  }
+
+  .card-secondary {
+    @apply bg-secondary-100 text-gray-700;
+    @apply dark:bg-secondary-900/50 dark:text-secondary-100;
+    @apply hover:bg-secondary-100 dark:hover:bg-secondary-700;
+  }
+
+  .card-tertiary {
+    @apply bg-tertiary-100 text-tertiary-700;
+    @apply dark:bg-tertiary-900/50 dark:text-tertiary-200;
+    @apply hover:bg-tertiary-100 dark:hover:bg-tertiary-800;
+  }
+
+  .card-quaternary {
+    @apply bg-quaternary-100 text-gray-700;
+    @apply dark:bg-quaternary-900/50 dark:text-quaternary-200;
+    @apply hover:bg-quaternary-100 dark:hover:bg-quaternary-800;
+  }
+
+  .card-quinary {
+    @apply bg-quinary-100 text-gray-700;
+    @apply dark:bg-quinary-900/50 dark:text-quinary-200;
+    @apply hover:bg-quinary-100 dark:hover:bg-quinary-800;
+  }
+
+  .card-shake:hover {
+    animation: soft-shake 0.5s ease-in-out infinite;
+  }
+
+  .button {
+    @apply h-14 px-10 rounded-full text-xl font-bold;
+  }
+
+  .button-primary {
+    @apply !bg-primary-50 !text-primary-800;
+    @apply dark:!bg-primary-900/50 dark:!text-primary-200;
+    @apply hover:!bg-primary-100 hover:dark:!bg-primary-800;
+  }
+
+  .chip {
+    @apply inline-flex items-center;
+    @apply px-4 py-1 rounded-full font-medium;
+    @apply transition-all duration-200 ease-in-out hover:scale-105;
+    @apply border-2;
+  }
+
+  .chip-quaternary {
+    @apply border-quaternary-500 bg-quaternary-50;
+    @apply dark:border-quaternary-500 dark:bg-quaternary-900/50;
+    @apply hover:bg-quaternary-200 dark:hover:bg-quaternary-800;
+  }
+
+  .skeleton {
+    @apply animate-pulse;
+    @apply rounded-xl;
+  }
+
+  .skeleton-primary{
+    @apply bg-primary-100;
+    @apply dark:bg-primary-900/50;
+  }
+
+  .skeleton-secondary{
+    @apply bg-secondary-100;
+    @apply dark:bg-secondary-900/50;
+  }
+
+  .skeleton-tertiary{
+    @apply bg-tertiary-100 ;
+    @apply dark:bg-tertiary-900/50 ;
+  }
+
+  .skeleton-quaternary{
+    @apply bg-quaternary-100;
+    @apply dark:bg-quaternary-900/50;
+  }
+
+  .skeleton-quinary{
+    @apply bg-quinary-100;
+    @apply dark:bg-quinary-900/50; 
+  }
+
+  .settings-fab {
+    @apply bg-gradient-to-r from-secondary-300 to-tertiary-100 shadow-xl;
+    @apply dark:from-quaternary-900 dark:to-secondary-900;
+    @apply hover:shadow-2xl hover:scale-110 transition-all duration-300;
+  }
+
+  .settings-fab-icon {
+    @apply !text-quaternary-700 dark:!text-primary-500;
+  }
+
+  .settings-panel {
+    @apply rounded-2xl shadow-2xl backdrop-blur-lg border border-white/20;
+    @apply bg-gradient-to-br from-primary-100 via-tertiary-100 to-secondary-100;
+    @apply dark:from-primary-900 dark:via-quaternary-900/50 dark:to-secondary-900/50;
+  }
+
+  .settings-panel-section {
+    @apply p-6 border-b border-gray-200 dark:border-gray-700;
+  }
+
+  .settings-panel-close-section {
+    @apply p-4 border-t border-gray-200 dark:border-gray-700 flex justify-center;
+  }
+
+  .settings-theme-icon {
+    @apply !text-purple-700 dark:!text-primary-600;
+  }
+
+  .settings-language-icon {
+    @apply !text-blue-700 dark:!text-blue-600;
+  }
+
+  .settings-panel-title {
+    @apply font-semibold text-gray-800 dark:text-gray-200;
+  }
+
+  .settings-panel-description {
+    @apply text-sm text-gray-600 dark:text-gray-400;
+  }
+
+  .settings-language-grid {
+    @apply grid grid-cols-2 gap-3;
+  }
+
+  .settings-language-button-active {
+    @apply !shadow-md;
+    @apply !bg-gradient-to-r !from-primary-300 !to-secondary-300 !text-gray-700;
+    @apply dark:!from-quaternary-900 dark:!to-primary-900 dark:!text-white;
+  }
+
+  .settings-language-button-inactive {
+    @apply !bg-white/70 !text-gray-700 hover:!bg-white;
+    @apply dark:!bg-gray-800/70 dark:!text-gray-300 dark:hover:!bg-gray-700;
+  }
+
+  .settings-language-content {
+    @apply flex flex-col items-center;
+  }
+
+  .settings-language-label {
+    @apply text-sm font-medium;
+  }
+
+  .settings-language-code {
+    @apply text-xs opacity-70;
+  }
+
+  .settings-theme-toggle {
+    @apply scale-125;
+  }
+
+  .profile-detail-page-container {
+    @apply container mx-auto p-4 md:p-10 max-w-5xl;
+  }
+
+  .profile-contact-card-icon {
+    @apply !w-6 !h-6 !text-2xl;
+    @apply !text-secondary-700 dark:!text-secondary-300
+  }
+
+  .profile-contact-card-text {
+    @apply text-sm font-medium;
+  }
+
+  .profile-experience-card {
+    @apply p-6 transition-all duration-300 ease-in-out;
+    @apply hover:shadow-lg hover:translate-x-1;
+    border-inline-start-width: 4px;
+    border-inline-end-width: 0;
+  }
+
+  .profile-experience-card.primary {
+    @apply border-primary-600 text-primary-800;
+    @apply dark:bg-primary-900/50 dark:text-primary-200;
+    @apply hover:bg-primary-100 dark:hover:bg-primary-800 dark:hover:text-primary-100;
+  }
+
+  .profile-experience-card.secondary {
+    @apply border-secondary-600 text-secondary-800;
+    @apply dark:bg-secondary-900/50 dark:text-secondary-200;
+    @apply hover:bg-secondary-100 dark:hover:bg-secondary-800 dark:hover:text-secondary-100;
+  }
+
+  .profile-experience-card.tertiary {
+    @apply border-tertiary-600 text-tertiary-800;
+    @apply dark:bg-tertiary-900/50 dark:text-tertiary-200;
+    @apply hover:bg-tertiary-100 dark:hover:bg-tertiary-800 dark:hover:text-tertiary-100;
+  }
+
+  .profile-experience-card.quinary {
+    @apply border-quinary-600 text-quinary-800;
+    @apply dark:bg-quinary-900/50 dark:text-quinary-200;
+    @apply hover:bg-quinary-100 dark:hover:bg-quinary-800 dark:hover:text-quinary-100;
+  }
+
+  .profile-experience-card.quaternary {
+    @apply border-quaternary-600 text-quaternary-800;
+    @apply dark:bg-quaternary-900/50 dark:text-quaternary-200;
+    @apply hover:bg-quaternary-100 dark:hover:bg-quaternary-800 dark:hover:text-quaternary-100;
+  }
+
+  .profile-experience-title {
+    @apply text-xl font-bold;
+  }
+
+  .profile-experience-company {
+    @apply font-medium;
+  }
+
+  .profile-experience-location {
+    @apply text-sm;
+  }
+
+  .profile-experience-date {
+    @apply text-sm md:text-right;
+  }
+
+  .profile-experience-description {
+    @apply mt-4 leading-relaxed;
+  }
+
+  .profile-experience-tags-container {
+    @apply mt-4;
+  }
+
+  .profile-experience-tag {
+    @apply px-4 py-1 rounded-full font-medium !border-1;
+    @apply transition-all duration-200 ease-in-out hover:scale-[1.03];
+  }
+
+  .profile-experience-tag.primary {
+    @apply !border-primary-600;
+    @apply !bg-primary-100 !text-primary-700;
+    @apply dark:!bg-primary-700 dark:!text-primary-100;
+  }
+
+  .profile-experience-tag.secondary {
+    @apply !border-secondary-600;
+    @apply !bg-secondary-100 !text-secondary-700;
+    @apply dark:!bg-secondary-700 dark:!text-secondary-100;
+  }
+
+  .profile-experience-tag.tertiary {
+    @apply !border-tertiary-600;
+    @apply !bg-tertiary-100 !text-tertiary-700;
+    @apply dark:!bg-tertiary-700 dark:!text-tertiary-100;
+  }
+
+  .profile-experience-tag.quinary {
+    @apply !border-quinary-600;
+    @apply !bg-quinary-100 !text-quinary-700;
+    @apply dark:!bg-quinary-700 dark:!text-quinary-100;
+  }
+
+  .profile-experience-tag.quaternary {
+    @apply !border-quaternary-600;
+    @apply !bg-quaternary-100 !text-quaternary-700;
+    @apply dark:!bg-quaternary-700 dark:!text-quaternary-100;
+  }
+
+  .profile-header-bg {
+    background: url('/assets/img/bg-3.jpg');
+    @apply bg-size-[300%];
+    @apply rounded-xl;
+  }
+
+  .profile-header-container {
+    @apply backdrop-blur-xs;
+    @apply dark:bg-gray-900/70 bg-white/50;
+    @apply rounded-xl;
+  }
+
+  .profile-header-picture {
+    @apply w-32 h-32 rounded-xl object-cover shadow-lg;
+    @apply border-4 border-t-primary-500 border-r-quinary-500 border-b-secondary-500 border-l-tertiary-500;
+    @apply transition-transform duration-300;
+    @apply group-hover:scale-105;
+  }
+
+  .profile-header-status {
+    @apply absolute -bottom-1 -right-1 w-6 h-6 rounded-full;
+    @apply border-4 border-white;
+    @apply dark:border-gray-800;
+  }
+
+  .profile-header-name {
+    @apply text-2xl font-black tracking-tight;
+  }
+
+  .profile-header-job-title {
+    @apply text-lg font-medium mt-1;
+  }
+
+  .profile-header-card {
+    @apply p-6 transition-all duration-300 ease-in-out;
+    @apply hover:shadow-lg hover:translate-x-1;
+    border-inline-start-width: 4px;
+    border-inline-end-width: 0;
+    @apply backdrop-blur-xs rounded-sm;
+    @apply border-primary-600 bg-primary-300/30;
+    @apply dark:bg-primary-900/50 dark:text-primary-200;
+  }
+
+  .profile-header-bio-card-text {
+    @apply font-medium;
+  }
+
+  .profile-key-point-card-icon {
+    @apply !w-8 !h-8 !text-3xl;
+  }
+
+  .profile-key-point-card-value {
+    @apply text-3xl font-bold;
+  }
+
+  .profile-key-point-card-label {
+    @apply text-sm font-medium;
+  }
+
+  .profile-language-card-icon {
+    @apply !w-6 !h-6 !text-xl;
+    @apply !text-primary-700 dark:!text-primary-300
+  }
+
+  .profile-language-card-name {
+    @apply text-sm font-semibold;
+  }
+
+  .profile-language-card-level {
+    @apply text-xs font-medium dark:text-primary-500 text-primary-700;
+  }
+
+  .profile-study-card-degree {
+    @apply font-semibold text-lg;
+  }
+
+  .profile-study-card-university {
+    @apply text-sm font-medium;
+  }
+
+  .profile-study-card-period {
+    @apply text-xs mt-1;
+  }
+
+  .profile-section-card {
+    @apply p-6 md:p-8 rounded-2xl;
+  }
+
+  .profile-section-header {
+    @apply text-xl font-bold mb-6 flex items-center gap-2;
+  }
+
+  .profile-section-prefix {
+    @apply !w-2 !h-6 rounded-sm;
+  }
+
+  .profile-section-icon {
+    @apply !w-6 !h-6 !text-xl;
+  }
+
+  .profile-card-shadow {
+    @apply shadow-[7px_0_7px_-7px] inset-shadow-[-7px_0_7px_-7px];
+  }
+
+  @keyframes soft-shake {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(0.2deg);
+    }
+    75% {
+      transform: rotate(-0.2deg);
+    }
+  }
+}
+
+/* Global responsive text sizes (optional, Tailwind handles most of this) */
+html {
+  font-size: 16px; /* Base font size */
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+}

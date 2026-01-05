@@ -1,0 +1,8 @@
+@reference "tailwindcss";
+
+@layer components {
+  /* Footer */
+  .app-footer {
+    @apply p-4 text-center;
+  }
+}

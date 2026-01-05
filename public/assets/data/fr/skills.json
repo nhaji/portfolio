@@ -1,0 +1,23 @@
+[
+  { "name": "System Design", "category": "Core Competencies" },
+  { "name": "Java", "category": "Core Competencies" },
+  { "name": "Angular", "category": "Core Competencies" },
+  { "name": "Node.js", "category": "Core Competencies" },
+  { "name": "Flutter", "category": "Core Competencies" },
+  { "name": "Microservices", "category": "Core Competencies" },
+  { "name": "Event Driven", "category": "Core Competencies" },
+  { "name": "RabbitMQ", "category": "Core Competencies" },
+  { "name": "NoSQL", "category": "Core Competencies" },
+  { "name": "Software Quality Assurance", "category": "Core Competencies" },
+  { "name": "DevOps", "category": "Core Competencies" },
+  { "name": "AWS Solutions", "category": "Core Competencies" },
+  { "name": "CI/CD Pipelines", "category": "Core Competencies" },
+  { "name": "Application Performance Monitoring", "category": "Core Competencies" },
+  { "name": "AI/ML", "category": "Core Competencies" },
+  { "name": "Agile/Scrum", "category": "Core Competencies" },
+  { "name": "BPMN", "category": "Core Competencies" },
+  { "name": "BPMS", "category": "Core Competencies" },
+  { "name": "Mentorship", "category": "Core Competencies" },
+  { "name": "Strategic Planning", "category": "Core Competencies" },
+  { "name": "Team Leadership", "category": "Core Competencies" }
+]

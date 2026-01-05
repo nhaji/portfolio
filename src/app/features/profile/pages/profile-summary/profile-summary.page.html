@@ -1,0 +1,188 @@
+<div class="container mx-auto p-4 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 animate-fade-in">
+  <main class="lg:col-span-12 space-y-8">
+    <!-- Profile Header Section -->
+    @defer (on viewport ; prefetch on idle) { @if(profileSummary.hasValue() &&
+    !profileSummary.isLoading()) {
+    <app-profile-header [profile]="profileSummary.value()!" />
+    } @else if (profileSummary.error()) {
+    <app-error-display
+      [message]="'ERROR.FETCH_FAILED'"
+      [details]="profileSummary.error()!.message"
+    />
+    } @else if (profileSummary.isLoading()) {
+    <div class="grid md:grid-flow-col md:grid-rows-3 md:grid-cols-7 sm:grid-flow-row gap-1">
+      <app-skeleton
+        class="justify-self-center md:justify-self-start sm:row-span-2 md:col-span-2 md:row-span-2"
+        className="skeleton-primary w-30 h-30"
+      />
+      <app-skeleton
+        class="justify-self-center md:justify-self-start sm:row-span-1 md:col-span-2 md:row-span-1"
+        className="skeleton-primary w-30 h-10"
+      />
+      <app-skeleton
+        class="sm:row-span-2 md:row-span-3 md:col-span-5"
+        className="skeleton-primary h-30 w-full"
+      />
+    </div>
+    } } @placeholder {
+    <div class="grid md:grid-flow-col md:grid-rows-3 md:grid-cols-7 sm:grid-flow-row gap-1">
+      <app-skeleton
+        class="justify-self-center md:justify-self-start sm:row-span-2 md:col-span-2 md:row-span-2"
+        className="skeleton-primary w-30 h-30"
+      />
+      <app-skeleton
+        class="justify-self-center md:justify-self-start sm:row-span-1 md:col-span-2 md:row-span-1"
+        className="skeleton-primary w-30 h-10"
+      />
+      <app-skeleton
+        class="sm:row-span-2 md:row-span-3 md:col-span-5"
+        className="skeleton-primary h-30 w-full"
+      />
+    </div>
+    }
+
+    <!-- Contacts Section -->
+    <app-profile-section
+      [title]="'PROFILE.CONTACTS'"
+      [icon]="'contact_mail'"
+      [prefixColorClass]="'bg-secondary-600 dark:bg-secondary-600'"
+      [shadowColorClass]="'shadow-secondary-500/50'"
+      [insetShadowColorClass]="'inset-shadow-secondary-500/50'"
+      [shadow]="false"
+    >
+      @defer (on viewport ; prefetch on idle) { @if(profileContacts.hasValue() &&
+      !profileContacts.isLoading()) {
+      <app-profile-contact [contacts]="profileContacts.value()!" />
+      } @else if (profileContacts.error()) {
+      <app-error-display
+        [message]="'ERROR.FETCH_FAILED'"
+        [details]="profileContacts.error()!.message"
+      />
+      } @else if (profileContacts.isLoading()) {
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <app-skeleton className="skeleton-secondary h-14 w-full animate-pulse" />
+        <app-skeleton className="skeleton-secondary h-14 w-full animate-pulse" />
+        <app-skeleton className="skeleton-secondary h-14 w-full animate-pulse" />
+      </div>
+      } } @placeholder {
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <app-skeleton className="skeleton-secondary h-14 w-full animate-pulse" />
+        <app-skeleton className="skeleton-secondary h-14 w-full animate-pulse" />
+        <app-skeleton className="skeleton-secondary h-14 w-full animate-pulse" />
+      </div>
+      }
+    </app-profile-section>
+
+    <!-- Key Points Section -->
+    <app-profile-section
+      [title]="'PROFILE.KEY_POINTS'"
+      [icon]="'star_outline'"
+      [prefixColorClass]="'bg-tertiary-600'"
+      [shadowColorClass]="'shadow-tertiary-500/50'"
+      [insetShadowColorClass]="'inset-shadow-tertiary-500/50'"
+      [shadow]="false"
+    >
+      @defer (on viewport ; prefetch on idle) { @if(profileKeyPoints.hasValue() &&
+      !profileKeyPoints.isLoading()) {
+      <app-profile-key-points [keyPoints]="profileKeyPoints.value()!" />
+      } @else if (profileKeyPoints.error()) {
+      <app-error-display
+        [message]="'ERROR.FETCH_FAILED'"
+        [details]="profileKeyPoints.error()!.message"
+      />
+      } @else if (profileKeyPoints.isLoading()) {
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <app-skeleton className="skeleton-tertiary h-28 w-full animate-pulse" />
+        <app-skeleton className="skeleton-tertiary h-28 w-full animate-pulse" />
+        <app-skeleton className="skeleton-tertiary h-28 w-full animate-pulse" />
+      </div>
+      } } @placeholder {
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <app-skeleton className="skeleton-tertiary h-28 w-full animate-pulse" />
+        <app-skeleton className="skeleton-tertiary h-28 w-full animate-pulse" />
+        <app-skeleton className="skeleton-tertiary h-28 w-full animate-pulse" />
+      </div>
+      }
+    </app-profile-section>
+
+    <!-- Languages Section -->
+    <app-profile-section
+      [title]="'PROFILE.LANGUAGES'"
+      [icon]="'language'"
+      [prefixColorClass]="'bg-primary-700 dark:bg-primary-600'"
+      [shadowColorClass]="'shadow-primary-500/50'"
+      [insetShadowColorClass]="'inset-shadow-primary-500/50'"
+      [shadow]="false"
+    >
+      @defer (on viewport ; prefetch on idle) { @if(profileLanguages.hasValue() &&
+      !profileLanguages.isLoading()) {
+      <app-profile-languages [languages]="profileLanguages.value()!" />
+      } @else if (profileLanguages.error()) {
+      <app-error-display
+        [message]="'ERROR.FETCH_FAILED'"
+        [details]="profileLanguages.error()!.message"
+      />
+      } @else if (profileLanguages.isLoading()) {
+      <app-skeleton className="skeleton-primary h-40 w-full animate-pulse" />
+      } } @placeholder {
+      <app-skeleton className="skeleton-primary h-40 w-full animate-pulse" />
+      }
+    </app-profile-section>
+
+    <!-- Skills Section -->
+    <app-profile-section
+      [title]="'PROFILE.CORE_COMPETENCIES'"
+      [icon]="'widgets'"
+      [prefixColorClass]="'bg-quaternary-600'"
+      [shadowColorClass]="'shadow-quaternary-500/50'"
+      [insetShadowColorClass]="'inset-shadow-quaternary-500/50'"
+      [shadow]="false"
+    >
+      @defer (on viewport ; prefetch on idle) { @if(profileSkills.hasValue() &&
+      !profileSkills.isLoading()) {
+      <app-profile-skills [skills]="profileSkills.value()!" />
+      } @else if (profileSkills.error()) {
+      <app-error-display
+        [message]="'ERROR.FETCH_FAILED'"
+        [details]="profileSkills.error()!.message"
+      />
+      } @else if (profileSkills.isLoading()) {
+      <app-skeleton className="skeleton-quaternary h-32 w-full animate-pulse" />
+      } } @placeholder {
+      <app-skeleton className="skeleton-quaternary h-32 w-full animate-pulse" />
+      }
+    </app-profile-section>
+
+    <!-- Studies Section -->
+    <app-profile-section
+      [title]="'PROFILE.STUDIES'"
+      [icon]="'school'"
+      [prefixColorClass]="'bg-quinary-600'"
+      [shadowColorClass]="'shadow-quinary-500/50'"
+      [insetShadowColorClass]="'inset-shadow-quinary-500/50'"
+      [shadow]="false"
+    >
+      @defer (on viewport ; prefetch on idle) { @if(profileStudies.hasValue() &&
+      !profileStudies.isLoading()) {
+      <app-profile-studies [studies]="profileStudies.value()!" />
+      } @else if (profileStudies.error()) {
+      <app-error-display
+        [message]="'ERROR.FETCH_FAILED'"
+        [details]="profileStudies.error()!.message"
+      />
+      } @else if (profileStudies.isLoading()) {
+      <app-skeleton className="skeleton-quinary h-48 w-full animate-pulse" />
+      } } @placeholder {
+      <app-skeleton className="skeleton-quinary h-48 w-full animate-pulse" />
+      }
+    </app-profile-section>
+
+    <!-- Link to Details Page -->
+    <div class="text-center mt-10">
+      <button mat-flat-button routerLink="details" class="button button-primary">
+        {{ 'PROFILE.VIEW_EXPERIENCES' | translate }}
+        <mat-icon iconPositionEnd>arrow_forward</mat-icon>
+      </button>
+    </div>
+  </main>
+</div>

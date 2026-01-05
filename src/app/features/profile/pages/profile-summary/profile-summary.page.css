@@ -1,0 +1,9 @@
+@reference "tailwindcss";
+@reference "../../../../../styles.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer components {
+
+  
+};

@@ -1,0 +1,28 @@
+<div class="profile-header-bg">
+  <div
+    class="flex flex-col sm:flex-row gap-3 sm:gap-21 profile-header-container"
+  >
+    <div class="flex flex-col items-center text-center sm:flex-shrink-0 sm:w-auto">
+      <div class="relative mb-4 mt-1 mx-3 group">
+        <img [src]="profile().imageUrl" alt="Profile Picture" class="profile-header-picture" />
+        <div [class]="'profile-header-status ' + getStatusClass(profile().status)"></div>
+      </div>
+      <h1 class="profile-header-name">{{ profile().firstName }} {{ profile().lastName }}</h1>
+      <p class="profile-header-job-title">{{ profile().jobTitle }}</p>
+    </div>
+
+    <app-profile-section
+      [title]="'PROFILE.ABOUT_ME'"
+      [icon]="'info_outline'"
+      [prefixColorClass]="'bg-primary-700 dark:bg-primary-600'"
+      [shadowColorClass]="'shadow-primary-500/50'"
+      [insetShadowColorClass]="'inset-shadow-primary-500/50'"
+      [shadow]="false"
+      class=""
+    >
+      <div class="p-6 md:p-8 card-shake profile-header-card flex-1">
+        <p class="profile-header-bio-card-text">{{ profile().bio }}</p>
+      </div>
+    </app-profile-section>
+  </div>
+</div>

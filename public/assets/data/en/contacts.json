@@ -1,0 +1,19 @@
+[
+  {
+    "type": "location",
+    "value": "Paris, France",
+    "label": "Location"
+  },
+  {
+    "type": "linkedin",
+    "value": "www.linkedin.com",
+    "label": "LinkedIn",
+    "link": "https://www.linkedin.com/in/nawfalhaji/"
+  },
+  {
+    "type": "github",
+    "value": "www.codeberg.com",
+    "label": "GitHub",
+    "link": "https://github.com/nawfalhaji"
+  }
+]

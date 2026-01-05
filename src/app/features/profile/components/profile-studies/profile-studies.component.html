@@ -1,0 +1,15 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+  @for (study of studies(); track study.id) {
+  <div class="flex-grow p-4 card card-quinary card-shake">
+    <h4 class="profile-study-card-degree">{{ study.degree }}</h4>
+    <p class="profile-study-card-university">{{ study.university }}</p>
+    <p class="profile-study-card-period">
+      {{ study.period.start | date : 'yyyy' }} - @if (study.period.isCurrent) {
+      <span>{{ 'COMMON.PRESENT' | translate }}</span>
+      } @else {
+      <span>{{ study.period.end | date : 'yyyy' }}</span>
+      }
+    </p>
+  </div>
+  }
+</div>

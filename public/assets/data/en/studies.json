@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "degree": "Computer Engineering Degree",
+    "university": "National School of Applied Sciences",
+    "period": { "start": "2014-09-01", "end": "2017-06-30", "isCurrent": false }
+  },
+  {
+    "id": 2,
+    "degree": "Integrated Preparatory Cycle",
+    "university": "National School of Applied Sciences",
+    "period": { "start": "2010-09-01", "end": "2013-06-30", "isCurrent": false }
+  }
+]

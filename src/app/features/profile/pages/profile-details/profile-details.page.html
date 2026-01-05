@@ -1,0 +1,42 @@
+<div class="profile-detail-page-container animate-fade-in">
+  <app-profile-section
+    [title]="'PROFILE.WORK_HISTORY'"
+    [icon]="'work'"
+    [prefixColorClass]="'bg-primary-600'"
+    [shadow]="false"
+  >
+    @defer (on viewport ; prefetch on idle) { @if(profileExperiences.hasValue() &&
+    !profileExperiences.isLoading()) {
+    <app-profile-experiences [experiences]="profileExperiences.value()!" />
+    } @else if (profileExperiences.error()) {
+    <app-error-display
+      [message]="'ERROR.FETCH_FAILED'"
+      [details]="profileExperiences.error()!.message"
+    />
+    } @else if (profileExperiences.isLoading()) {
+    <div class="flex flex-col gap-6">
+        <app-skeleton className="skeleton-primary h-48 w-full rounded-lg animate-pulse" />
+        <app-skeleton className="skeleton-secondary h-48 w-full rounded-lg animate-pulse" />
+        <app-skeleton className="skeleton-tertiary h-48 w-full rounded-lg animate-pulse" />
+        <app-skeleton className="skeleton-quaternary h-48 w-full rounded-lg animate-pulse" />
+        <app-skeleton className="skeleton-quinary h-48 w-full rounded-lg animate-pulse" />
+    </div>
+    } } @placeholder {
+    <div class="flex flex-col gap-6">
+        <app-skeleton className="skeleton-primary h-48 w-full rounded-lg animate-pulse" />
+        <app-skeleton className="skeleton-secondary h-48 w-full rounded-lg animate-pulse" />
+        <app-skeleton className="skeleton-tertiary h-48 w-full rounded-lg animate-pulse" />
+        <app-skeleton className="skeleton-quaternary h-48 w-full rounded-lg animate-pulse" />
+        <app-skeleton className="skeleton-quinary h-48 w-full rounded-lg animate-pulse" />
+    </div>
+    }
+  </app-profile-section>
+
+  <!-- Link to Summary Page -->
+  <div class="text-center mt-10">
+    <button mat-flat-button routerLink=".." class="button button-primary">
+      {{ 'COMMON.BACK' | translate }}
+      <mat-icon iconPositionStart>arrow_back</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div [class]="combinedClasses()">
+  <h2 class="profile-section-header">
+    <span [class]="'profile-section-prefix ' + prefixColorClass()"></span>
+    <mat-icon class="profile-section-icon">{{ icon() }}</mat-icon>
+    <span>{{ title() | translate }}</span>
+  </h2>
+  <ng-content></ng-content>
+</div>

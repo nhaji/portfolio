@@ -1,0 +1,44 @@
+{
+  "APP": {
+    "TITLE": "نوفل حاجي",
+    "TOGGLE_THEME": "تبديل الوضع الداكن/الفاتح",
+    "LANGUAGE": "اللغة",
+    "FOOTER_TEXT": "نوفل حاجي. جميع الحقوق محفوظة.",
+    "THEME": "المظهر",
+    "THEME_DESCRIPTION": "التبديل بين الوضع الداكن والوضع الفاتح"
+  },
+  "COMMON": {
+    "BACK": "عودة",
+    "PRESENT": "حالي",
+    "CLOSE": "إغلاق"
+  },
+  "ERROR": {
+    "FETCH_FAILED": "فشل تحميل البيانات. يرجى المحاولة مرة أخرى.",
+    "NOT_FOUND": "المورد غير موجود.",
+    "SERVER_ERROR": "خطأ في الخادم. يرجى المحاولة لاحقا.",
+    "NETWORK_ERROR": "خطأ في الشبكة. يرجى التحقق من اتصالك."
+  },
+  "PROFILE": {
+    "ABOUT_ME": "معلومات عني",
+    "CONTACTS": "جهات الاتصال",
+    "KEY_POINTS": "النقاط الرئيسية",
+    "LANGUAGES": "اللغات",
+    "CORE_COMPETENCIES": "الكفاءات الأساسية",
+    "STUDIES": "الدراسات",
+    "WORK_HISTORY": "تاريخ العمل",
+    "VIEW_EXPERIENCES": "عرض الخبرات",
+    "SUMMARY_TITLE": "ملخص الملف الشخصي",
+    "DETAILS_TITLE": "تفاصيل الملف الشخصي"
+  },
+  "LANGUAGE": {
+    "NATIVE": "أصلي",
+    "FLUENT": "بطلاقة",
+    "INTERMEDIATE": "متوسط",
+    "BEGINNER": "مبتدئ"
+  },
+  "KEY_POINT": {
+    "YEARS_EXP": "سنوات الخبرة",
+    "PROJECTS": "المشاريع",
+    "TEAMS_LED": "الفرق التي قدتها"
+  }
+}

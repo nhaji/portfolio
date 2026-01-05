@@ -1,0 +1,44 @@
+{
+  "APP": {
+    "TITLE": "Nawfal Haji",
+    "TOGGLE_THEME": "Basculer le mode Sombre/Clair",
+    "LANGUAGE": "Langue",
+    "FOOTER_TEXT": "Nawfal Haji. Tous droits réservés.",
+     "THEME": "Thème",
+    "THEME_DESCRIPTION": "Basculer entre le mode sombre et le mode clair"
+  },
+  "COMMON": {
+    "BACK": "Retour",
+    "PRESENT": "Présent",
+    "CLOSE": "Fermer"
+  },
+  "ERROR": {
+    "FETCH_FAILED": "Échec du chargement des données. Veuillez réessayer.",
+    "NOT_FOUND": "Ressource introuvable.",
+    "SERVER_ERROR": "Erreur serveur. Veuillez réessayer plus tard.",
+    "NETWORK_ERROR": "Erreur réseau. Veuillez vérifier votre connexion."
+  },
+  "PROFILE": {
+    "ABOUT_ME": "À propos de moi",
+    "CONTACTS": "Contacts",
+    "KEY_POINTS": "Points Clés",
+    "LANGUAGES": "Langues",
+    "CORE_COMPETENCIES": "Compétences Clés",
+    "STUDIES": "Études",
+    "WORK_HISTORY": "Expérience Professionnelle",
+    "VIEW_EXPERIENCES": "Voir les Expériences",
+    "SUMMARY_TITLE": "Résumé du Profil",
+    "DETAILS_TITLE": "Détails du Profil"
+  },
+  "LANGUAGE": {
+   "NATIVE": "Natif",
+    "FLUENT": "Courant",
+    "INTERMEDIATE": "Intermédiaire",
+    "BEGINNER": "Débutant"
+  },
+  "KEY_POINT": {
+    "YEARS_EXP": "ANNÉES EXP",
+    "PROJECTS": "PROJETS",
+    "TEAMS_LED": "ÉQUIPES DIRIGÉES"
+  }
+}

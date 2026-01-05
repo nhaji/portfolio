@@ -1,0 +1,154 @@
+[
+  {
+    "id": 1,
+    "title": "مدير المشروع الفني",
+    "company": "Sacem",
+    "location": "باريس",
+    "period": { "start": "2023-04-01", "isCurrent": true },
+    "description": "قيادة فريق إدارة علاقات العملاء (CRM) المكون من سبعة مهندسين. قمنا بتطبيق نظام التكامل المستمر/التسليم المستمر (CI/CD) القائم على الفرع الرئيسي مع خيار تفعيل الخاصيات. قمنا بنقل الكود القديم من الإصدارات المهملة إلى إصدارات الدعم طويل الأمد (LTS). كما قمنا بتصميم وتطوير خدمات مصغرة جديدة يتم نشرها في بيئة ECS.",
+    "tags": [
+      "Java",
+      "Spring",
+      "AWS",
+      "Gitlab",
+      "SonarQube",
+      "Testcontainers",
+      "OracleDB",
+      "Docker",
+      "Debian",
+      "Jira"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "مطور برامج متخصص",
+    "company": "Malakoff Humanis",
+    "location": "باريس",
+    "period": { "start": "2022-07-01", "end": "2023-03-31", "isCurrent": false },
+    "description": "مطور برامج رئيسي ضمن فريق مكون من خمسة مهندسين. قمنا بتصميم وتطوير واجهة برمجة التطبيقات الرئيسية والموصلات التي تتيح التفاعل مع واجهة برمجة تطبيقات خارجية لإدارة عملية الاشتراك في التأمين.",
+    "tags": [
+      "Java",
+      "Spring",
+      "Angular",
+      "PostgreSQL",
+      "Debian",
+      "Gitlab",
+      "Jenkins",
+      "Nexus",
+      "Jira",
+      "Confluence"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "مطور برامج متخصص",
+    "company": "EDF",
+    "location": "باريس",
+    "period": { "start": "2021-12-01", "end": "2022-06-30", "isCurrent": false },
+    "description": "مطور برامج أول ضمن فريق مكون من مهندسين اثنين. قمنا بتصميم وتطوير بنية تعتمد على تدفق البيانات المباشر تتيح التفاعل مع جميع واجهات برمجة التطبيقات الخاصة بنظام المعلومات الداخلي.",
+    "tags": [
+      "Java",
+      "Spring",
+      "Artemis",
+      "Angular",
+      "Jenkins",
+      "Nexus",
+      "SVN",
+      "Oracle",
+      "Debian",
+      "Jira"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "مدير المشروع الفني",
+    "company": "Binarios IT",
+    "location": "الدار البيضاء",
+    "period": { "start": "2020-10-01", "end": "2021-07-31", "isCurrent": false },
+    "description": "قيادة فريق إدارة مكون من ستة مهندسين. قمنا بتصميم وتطوير بنية الخدمات المصغرة لنظام تخطيط موارد المؤسسات (ERP) الخاص بالرعاية الصحية.",
+    "tags": [
+      "Java",
+      "Spring",
+      "Angular",
+      "PostgreSQL",
+      "BitBucket",
+      "Jenkins",
+      "Nexus",
+      "Minio",
+      "Graylog",
+      "Jasper",
+      "Squash",
+      "SonarQube",
+      "PostgreSQL",
+      "Debian",
+      "Jira",
+      "Confluence"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "المدير الفني",
+    "company": "CEGEDIM",
+    "location": "الرباط",
+    "period": { "start": "2020-07-01", "end": "2020-09-30", "isCurrent": false },
+    "description": " قيادة فريق من ثلاثة مهندسين لتحويل الكود من SVN إلى Git. كما قدمنا نموذجًا أوليًا لعملية نقل كود من مشروع AngularJS إلى Angular.",
+    "tags": [
+      "Java",
+      "Spring",
+      "Angular",
+      "OracleDB",
+      "Gitlab",
+      "Jenkins",
+      "Nexus",
+      "Squash",
+      "SonarQube",
+      "PostgreSQL",
+      "Debian",
+      "Jira"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "المدير الفني",
+    "company": "Leyton",
+    "location": "الدار البيضاء",
+    "period": { "start": "2018-11-01", "end": "2020-06-30", "isCurrent": false },
+    "description": "قيادة فريقين من ثمانية مهندسين. قمنا بتصميم وتطوير بنية الخدمات المصغرة لنظام تداول شهادات الطاقة ونظام آخر لإدارة الإجازات المرضية.",
+    "tags": [
+      "Java",
+      "Spring",
+      "Kafka",
+      "Minio",
+      "Keycloak",
+      "Docker",
+      "Drools",
+      "Angular",
+      "Graylog",
+      "Gatling",
+      "Squash",
+      "SonarQube",
+      "PostgreSQL",
+      "Debian",
+      "Jira",
+      "Confluence"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "مطور البرمجيات",
+    "company": "Insoft Saphir",
+    "location": "الدار البيضاء",
+    "period": { "start": "2017-07-01", "end": "2018-10-31", "isCurrent": false },
+    "description": "ضمن فريق مكون من ثلاثة مطورين، قمنا بتصميم وتطوير نظام إدارة سلسلة التوريد وتطبيق محفظة إلكترونية للهواتف المحمولة.",
+    "tags": ["Java", "Spring", "Angular", "Ionic", "MSSQL", "Gitblit", "Redmine"]
+  },
+  {
+    "id": 8,
+    "title": "مدير المشروع الفني",
+    "company": "Utopie",
+    "location": "الدار البيضاء",
+    "period": { "start": "2017-02-01", "end": "2017-06-30", "isCurrent": false },
+    "description": "قيادة فريق مكون من ثلاثة مهندسين. قمنا بتصميم وتطوير نظام نقاط البيع.",
+    "tags": ["Java", "JavaFX", "Spring", "VueJS", "Swift", "MySQL", "Debian", "Jira"]
+  }
+]

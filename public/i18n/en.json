@@ -1,0 +1,44 @@
+{
+  "APP": {
+    "TITLE": "Nawfal Haji",
+    "TOGGLE_THEME": "Toggle Dark/Light Mode",
+    "LANGUAGE": "Language",
+    "THEME": "Theme",
+    "THEME_DESCRIPTION": "Switch between dark and light mode",
+    "FOOTER_TEXT": "Nawfal Haji. All rights reserved."
+  },
+  "COMMON": {
+    "BACK": "Back",
+    "PRESENT": "Present",
+    "CLOSE": "Close"
+  },
+  "ERROR": {
+    "FETCH_FAILED": "Failed to load data. Please try again.",
+    "NOT_FOUND": "Resource not found.",
+    "SERVER_ERROR": "Server error. Please try again later.",
+    "NETWORK_ERROR": "Network error. Please check your connection."
+  },
+  "PROFILE": {
+    "ABOUT_ME": "About Me",
+    "CONTACTS": "Contacts",
+    "KEY_POINTS": "Key Points",
+    "LANGUAGES": "Languages",
+    "CORE_COMPETENCIES": "Core Competencies",
+    "STUDIES": "Studies",
+    "WORK_HISTORY": "Work History",
+    "VIEW_EXPERIENCES": "View Experiences",
+    "SUMMARY_TITLE": "Profile Summary",
+    "DETAILS_TITLE": "Profile Details"
+  },
+  "LANGUAGE": {
+    "NATIVE": "Native",
+    "FLUENT": "Fluent",
+    "INTERMEDIATE": "Intermediate",
+    "BEGINNER": "Beginner"
+  },
+  "KEY_POINT": {
+    "YEARS_EXP": "YEARS EXP",
+    "PROJECTS": "PROJECTS",
+    "TEAMS_LED": "TEAMS LED"
+  }
+}

@@ -1,0 +1,29 @@
+<div class="space-y-6">
+    @for (exp of experiences(); track exp.id; let idx = $index) {
+      <div [class]="getCardColorClasse(idx) + ' profile-experience-card card-hover-shake animate-fade-in'">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+          <div>
+            <h3 class="profile-experience-title">{{ exp.title }}</h3>
+            <p class="profile-experience-company">{{ exp.company }}</p>
+            <p class="profile-experience-location">{{ exp.location }}</p>
+          </div>
+          <div class="profile-experience-date mt-2 md:mt-0">
+            {{ exp.period.start | date:'MMM yyyy' }} - 
+            @if (exp.period.isCurrent) {
+              <span>{{ 'COMMON.PRESENT' | translate }}</span>
+            } @else {
+              <span>{{ exp.period.end | date:'MMM yyyy' }}</span>
+            }
+          </div>
+        </div>
+        <p class="profile-experience-description">{{ exp.description }}</p>
+        <div class="flex flex-wrap gap-2 profile-experience-tags-container">
+          @for (tag of exp.tags; track tag) {
+            <div [class]="getCardColorClasse(idx) + ' profile-experience-tag inline-flex items-center'">
+              #{{ tag }}
+            </div>
+          }
+        </div>
+    </div>
+    }
+  </div>

@@ -1,0 +1,15 @@
+<div class="relative flex flex-col min-h-screen">
+  <main class="flex-grow relative">
+    <router-outlet></router-outlet>
+    
+    <app-settings [isDarkMode]="isDarkMode()" [currentLang]="currentLang()" 
+    [languages]="languages" (onToggleTheme)="toggleTheme()"
+     (onChangeLanguage)="changeLanguage($event)">
+    </app-settings>
+
+  </main>
+
+  <footer class="app-footer bg-surface-variant text-on-surface-variant">
+    © {{ 'APP.FOOTER_TEXT' | translate }} {{currentYear}}
+  </footer>
+</div>

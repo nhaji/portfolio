@@ -1,0 +1,8 @@
+services:
+
+  app-fa002:
+    build:
+      context: .
+    ports:
+      - '8080:4000'
+    restart: unless-stopped
