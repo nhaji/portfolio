@@ -2,13 +2,13 @@
   {
     "id": 1,
     "degree": "Ingénieur d'état en génie logiciel",
-    "university": "Ecole ntinale des sciences appliquées",
+    "university": "Ecole natinale des sciences appliquées",
     "period": { "start": "2014-09-01", "end": "2017-06-30", "isCurrent": false }
   },
   {
     "id": 2,
     "degree": "Classes préparatoires intégrées",
-    "university": "Ecole ntinale des sciences appliquées",
+    "university": "Ecole natinale des sciences appliquées",
     "period": { "start": "2010-09-01", "end": "2013-06-30", "isCurrent": false }
   }
 ]

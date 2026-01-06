@@ -8,12 +8,12 @@
     "type": "linkedin",
     "value": "www.linkedin.com",
     "label": "LinkedIn",
-    "link": "https://www.linkedin.com/in/nawfalhaji/"
+    "link": "https://www.linkedin.com/in/nhaji"
   },
   {
     "type": "github",
-    "value": "www.codeberg.com",
+    "value": "www.github.com",
     "label": "GitHub",
-    "link": "https://github.com/nawfalhaji"
+    "link": "https://github.com/nhaji"
   }
 ]

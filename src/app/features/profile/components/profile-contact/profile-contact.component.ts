@@ -23,7 +23,7 @@ export class ProfileContactComponent {
       case ContactType.LINKEDIN:
         return 'linkedin';
       case ContactType.GITHUB:
-        return 'code';
+        return 'integration_instructions';
       case ContactType.WEBSITE:
         return 'public';
       case ContactType.LOCATION:
