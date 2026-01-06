@@ -346,9 +346,13 @@ If you want to always generate all CSS variables, you can use the static theme o
   }
 
   .profile-header-bg {
-    background: url('/assets/img/bg-3.jpg');
-    @apply bg-size-[300%];
+    @apply relative;
     @apply rounded-xl;
+  }
+  
+  .profile-header-bg-img {
+    @apply absolute inset-0 w-full h-full;
+    @apply object-cover object-center rounded-2xl;
   }
 
   .profile-header-container {
@@ -359,9 +363,13 @@ If you want to always generate all CSS variables, you can use the static theme o
 
   .profile-header-picture {
     @apply w-32 h-32 rounded-xl object-cover shadow-lg;
-    @apply border-4 border-t-primary-500 border-r-quinary-500 border-b-secondary-500 border-l-tertiary-500;
-    @apply transition-transform duration-300;
-    @apply group-hover:scale-105;
+    @apply border-4 border-t-primary-500 border-r-quaternary-500 border-b-tertiary-500 border-l-secondary-500;
+    @apply group-hover:scale-105 transition-transform;
+    @apply transition-opacity duration-3500; 
+  }
+  
+  .profile-header-picture-skeleton {
+    @apply bg-primary-100 dark:bg-primary-900 animate-pulse; 
   }
 
   .profile-header-status {

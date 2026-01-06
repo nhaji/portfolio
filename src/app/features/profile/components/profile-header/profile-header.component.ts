@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { Component, input, signal } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
@@ -12,10 +12,27 @@ import { ProfileSectionComponent } from '../profile-section/profile-section.comp
   selector: 'app-profile-header',
   templateUrl: './profile-header.component.html',
   styleUrl: './profile-header.component.css',
-  imports: [CommonModule, MatCardModule, MatIconModule, MatDividerModule, ProfileSectionComponent, TranslateModule],
+  imports: [
+    CommonModule,
+    NgOptimizedImage,
+    MatCardModule,
+    MatIconModule,
+    MatDividerModule,
+    ProfileSectionComponent,
+    TranslateModule,
+  ],
 })
 export class ProfileHeaderComponent {
   profile = input.required<ProfileModel>();
+  isImageLoaded = signal<boolean>(false);
+
+  onImageLoad(): void {
+    this.isImageLoaded.set(true);
+  }
+
+  onImageError(): void {
+    this.isImageLoaded.set(true);
+  }
 
   getStatusClass(status: ProfileStatus): string {
     switch (status) {
