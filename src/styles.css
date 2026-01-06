@@ -108,6 +108,10 @@ If you want to always generate all CSS variables, you can use the static theme o
     animation: soft-shake 0.5s ease-in-out infinite;
   }
 
+  .card-colorful-shadow {
+    @apply shadow-[0_-15px_21px_-15px_theme(colors.primary.500),0_15px_21px_-15px_theme(colors.tertiary.500),-15px_0_21px_-15px_theme(colors.secondary.500),15px_0_21px_-15px_theme(colors.quaternary.500)];
+  }
+
   .button {
     @apply h-14 px-10 rounded-full text-xl font-bold;
   }
