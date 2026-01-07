@@ -16,7 +16,9 @@
       "OracleDB",
       "Docker",
       "Debian",
-      "Jira"
+      "Jira",
+      "Scrum",
+      "SAFe"
     ]
   },
   {
@@ -36,7 +38,9 @@
       "Jenkins",
       "Nexus",
       "Jira",
-      "Confluence"
+      "Confluence",
+      "Scrum",
+      "SAFe"
     ]
   },
   {
@@ -56,7 +60,8 @@
       "SVN",
       "Oracle",
       "Debian",
-      "Jira"
+      "Jira",
+      "Scrum"
     ]
   },
   {
@@ -82,7 +87,8 @@
       "PostgreSQL",
       "Debian",
       "Jira",
-      "Confluence"
+      "Confluence",
+      "Scrum"
     ]
   },
   {
@@ -104,7 +110,8 @@
       "SonarQube",
       "PostgreSQL",
       "Debian",
-      "Jira"
+      "Jira",
+      "Scrum"
     ]
   },
   {
@@ -130,7 +137,8 @@
       "PostgreSQL",
       "Debian",
       "Jira",
-      "Confluence"
+      "Confluence",
+      "Scrum"
     ]
   },
   {
@@ -140,7 +148,7 @@
     "location": "Casablanca",
     "period": { "start": "2017-07-01", "end": "2018-10-31", "isCurrent": false },
     "description": "Au sein d'une équipe de trois développeurs, nous avons conçu et développé un système de gestion de la chaîne d'approvisionnement et une application mobile gérant les E-wallet.",
-    "tags": ["Java", "Spring", "Angular", "Ionic", "MSSQL", "Gitblit", "Redmine"]
+    "tags": ["Java", "Spring", "Angular", "Ionic", "MSSQL", "Gitblit", "Redmine", "Kanban"]
   },
   {
     "id": 8,
@@ -149,6 +157,6 @@
     "location": "Casablanca",
     "period": { "start": "2017-02-01", "end": "2017-06-30", "isCurrent": false },
     "description": "A la tête d'une équipe de trois ingénieurs, nous avons conçu et développé un système de point de vente.",
-    "tags": ["Java", "JavaFX", "Spring", "VueJS", "Swift", "MySQL", "Debian", "Jira"]
+    "tags": ["Java", "JavaFX", "Spring", "VueJS", "Swift", "MySQL", "Debian", "Jira", "Scrum"]
   }
 ]
