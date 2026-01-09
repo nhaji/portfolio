@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProfileExperiencesComponent } from '../../components/profile-experiences/profile-experiences.component';
 import { CommonModule } from '@angular/common';
 import { ErrorDisplayComponent } from '../../../../shared/components/error-display/error-display.component';
@@ -15,7 +15,6 @@ import { TranslateModule } from '@ngx-translate/core';
   selector: 'app-profile-details',
   imports: [
     CommonModule,
-    RouterModule,
     TranslateModule,
     MatButtonModule,
     MatIconModule,
@@ -32,10 +31,16 @@ import { TranslateModule } from '@ngx-translate/core';
 export class ProfileDetailsPage {
 
   profileStore = inject(ProfileStore);
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
 
   profileExperiences = this.profileStore.experiencesResource;
 
   ngOnInit(): void {
+  }
+
+  navigateToSummary(){
+    this.router.navigate(['..'], { relativeTo: this.route });
   }
 
 }

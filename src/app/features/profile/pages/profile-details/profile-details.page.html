@@ -34,7 +34,7 @@
 
   <!-- Link to Summary Page -->
   <div class="text-center mt-10">
-    <button mat-flat-button routerLink=".." class="button button-primary">
+    <button mat-flat-button (click)="navigateToSummary()" class="button button-primary">
       {{ 'COMMON.BACK' | translate }}
       <mat-icon iconPositionStart>arrow_back</mat-icon>
     </button>

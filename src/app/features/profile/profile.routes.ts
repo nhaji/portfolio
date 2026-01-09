@@ -1,6 +1,9 @@
 import { Routes } from '@angular/router';
 import { Profile } from './profile';
 
+export const PROFILE_ROUTE: string = 'profile';
+export const PROFILE_DETAIL_ROUTE: string = 'details';
+
 export const routes: Routes = [
   {
     path: '',
@@ -8,12 +11,14 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        loadComponent: () => import('./pages/profile-summary/profile-summary.page').then(m => m.ProfileSummaryPage),
+        loadComponent: () =>
+          import('./pages/profile-summary/profile-summary.page').then((m) => m.ProfileSummaryPage),
       },
       {
-        path: 'details',
-        loadComponent: () => import('./pages/profile-details/profile-details.page').then(m => m.ProfileDetailsPage),
+        path: PROFILE_DETAIL_ROUTE,
+        loadComponent: () =>
+          import('./pages/profile-details/profile-details.page').then((m) => m.ProfileDetailsPage),
       },
-    ]
+    ],
   },
 ];
