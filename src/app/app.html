@@ -4,7 +4,6 @@
 
     @if(!isChatbotRoute()){
     <app-chatbot-fab (onClick)="navigateToChatbot()"></app-chatbot-fab>
-    }
 
     <app-settings
       [isDarkMode]="isDarkMode()"
@@ -14,9 +13,12 @@
       (onChangeLanguage)="changeLanguage($event)"
     >
     </app-settings>
+    }
   </main>
 
+  @if(!isChatbotRoute()){
   <footer class="app-footer bg-surface-variant text-on-surface-variant">
     © {{ 'APP.FOOTER_TEXT' | translate }} {{ currentYear }}
   </footer>
+  }
 </div>

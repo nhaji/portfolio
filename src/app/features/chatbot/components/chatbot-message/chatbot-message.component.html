@@ -1,1 +1,14 @@
-<p>chatbot-message works!</p>
+<div class="flex items-start gap-3" [class.justify-end]="message().isCurrentUser">
+  <div class="flex flex-col gap-2 items-start max-w-[85%]">
+    <div
+      [class.chatbot-message-container-not-current-user]="!message().isCurrentUser"
+      [class.chatbot-message-container-current-user]="message().isCurrentUser"
+      class="chatbot-message-container"
+    >
+      <div class="px-4 py-3 chatbot-message-content">
+        <p class="chatbot-message-text" [innerHTML]="message().message"></p>
+      </div>
+    </div>
+    <span class="chatbot-message-timestamp">{{ message().timestamp | date:'h:mm a' }}</span>
+  </div>
+</div>

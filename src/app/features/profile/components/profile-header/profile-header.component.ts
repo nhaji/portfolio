@@ -7,6 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ProfileModel } from '../../models/profile.model';
 import { ProfileStatus } from '../../models/profile-status.enum';
 import { ProfileSectionComponent } from '../profile-section/profile-section.component';
+import { ImageComponent } from '../../../../shared/components/image/image.component';
 
 @Component({
   selector: 'app-profile-header',
@@ -19,6 +20,7 @@ import { ProfileSectionComponent } from '../profile-section/profile-section.comp
     MatIconModule,
     MatDividerModule,
     ProfileSectionComponent,
+    ImageComponent,
     TranslateModule,
   ],
 })

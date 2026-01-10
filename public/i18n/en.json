@@ -30,6 +30,12 @@
     "SUMMARY_TITLE": "Profile Summary",
     "DETAILS_TITLE": "Profile Details"
   },
+  "CHATBOT": {
+    "MESSAGES": "Messages",
+    "PLACEHOLDER": "Ask your question and you will find your answer...",
+    "INITIAL_MESSAGE": "👋 Hi there how can I help you",
+    "DEFAULT_MESSAGE": "This feature is not yet available, but it will be soon 🎉"
+  },
   "LANGUAGE": {
     "NATIVE": "Native",
     "FLUENT": "Fluent",

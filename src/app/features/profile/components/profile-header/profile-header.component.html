@@ -1,26 +1,10 @@
 <div class="profile-header-bg card-colorful-shadow">
-  <img
-  ngSrc="/assets/img/bg.avif"
-  fill priority class="profile-header-bg-img"
-  />
+  <img ngSrc="/assets/img/bg.avif" fill priority class="profile-header-bg-img" />
   <div class="flex flex-col sm:flex-row gap-3 sm:gap-21 profile-header-container">
     <div class="flex flex-col items-center text-center sm:flex-shrink-0 sm:w-auto">
-      <div class="relative mb-4 mt-1 mx-3 group">
-        @if(!isImageLoaded()){
-        <div class="profile-header-picture profile-header-picture-skeleton "></div>
-        }
-        <img
-          [src]="profile().imageUrl"
-          alt="Profile Picture"
-          (load)="onImageLoad()"
-          (error)="onImageError()"
-          class="profile-header-picture"
-          [class.opacity-100]="isImageLoaded()"
-          [class.opacity-0]="!isImageLoaded()"
-        />
-        @if(isImageLoaded()){
+      <div class="relative mb-4 mt-1 mx-3 w-32 h-32 group">
+        <app-image borderClass="profile-header-picture" [imgUrl]="profile().imageUrl"></app-image>
         <div [class]="'profile-header-status ' + getStatusClass(profile().status)"></div>
-        }
       </div>
       <h1 class="profile-header-name">{{ profile().firstName }} {{ profile().lastName }}</h1>
       <p class="profile-header-job-title">{{ profile().jobTitle }}</p>

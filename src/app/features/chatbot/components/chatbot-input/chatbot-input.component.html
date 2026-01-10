@@ -1,1 +1,14 @@
-<p>chatbot-input works!</p>
+<div class="max-w-xl mx-auto flex items-center gap-3">
+  <app-input class="flex-1">
+    <input
+      [field]="messageForm.text"
+      (keydown.enter)="onSendMessage()"
+      [placeholder]="'CHATBOT.PLACEHOLDER' | translate "
+      type="text"
+    />
+  </app-input>
+
+  <button mat-fab class="chatbot-input-send-btn" (click)="onSendMessage()">
+    <mat-icon class="chatbot-input-send-btn-icon">arrow_upward</mat-icon>
+  </button>
+</div>

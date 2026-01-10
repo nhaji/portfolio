@@ -1,0 +1,17 @@
+<div class="max-w-xl mx-auto w-full">
+  <div class="flex justify-between items-end mb-2">
+    <div class="flex flex-row gap-4 items-end">
+      <app-image
+        borderClass="chatbot-header-picture"
+        class="w-15 h-15"
+        imgUrl="assets/img/Photo.avif"
+      ></app-image>
+    </div>
+    <span class="chatbot-header-message-number"
+      >{{ usedMessages() }} / {{ maxMessages() }} {{'CHATBOT.MESSAGES' | translate }}</span
+    >
+  </div>
+  <div class="chatbot-header-progress-bar-container">
+    <div class="chatbot-header-progress-bar-content" [style.width.%]="progressPercentage()"></div>
+  </div>
+</div>
