@@ -1,5 +1,6 @@
-export interface Message {
+export interface MessageModel {
+  id: number;
   isCurrentUser: boolean;
-  imageUrl: string;
   message: string;
+  timestamp: Date;
 }

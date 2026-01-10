@@ -1,0 +1,14 @@
+
+  @if(!isImageLoaded()){
+  <div class="image image-skeleton"></div>
+  }
+  <img
+    [src]="imgUrl()"
+    alt="Profile Picture"
+    (load)="onImageLoad()"
+    (error)="onImageError()"
+    [class]="'mx-3 image ' + borderClass()"
+    [class.opacity-100]="isImageLoaded()"
+    [class.opacity-0]="!isImageLoaded()"
+  />
+

@@ -69,6 +69,50 @@ If you want to always generate all CSS variables, you can use the static theme o
 }
 
 @layer components {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .input-border {
+    @apply -inset-[1px] rounded-full;
+    @apply blur-[1px];
+    @apply bg-gradient-to-r rtl:bg-gradient-to-l;
+    @apply from-primary-700 via-secondary-700 to-tertiary-700;
+    @apply dark:from-primary-500 dark:via-secondary-500 dark:to-tertiary-500;
+    @apply opacity-50 group-focus-within:opacity-90;
+    @apply dark:opacity-30 dark:group-focus-within:opacity-80;
+    @apply transition duration-300;
+  }
+
+  .input-container {
+    @apply rounded-full border border-white/10;
+    @apply overflow-hidden;
+    @apply bg-white/90 dark:bg-black/90;
+  }
+
+  .input-container input {
+    @apply flex-1;
+    @apply bg-transparent border-none;
+    @apply py-3.5 px-6;
+    @apply text-sm;
+    @apply placeholder:text-black/50 dark:placeholder:text-white/20;
+    @apply focus:ring-0;
+  }
+
+  .image {
+    @apply rounded-xl object-cover shadow-lg;
+    @apply group-hover:scale-105 transition-transform;
+    @apply transition-opacity duration-3500;
+  }
+
+  .image-skeleton {
+    @apply bg-primary-100 dark:bg-primary-900 animate-pulse;
+  }
+
   .card {
     @apply transition-all duration-700 ease-in-out;
     @apply rounded-xl;
@@ -140,29 +184,29 @@ If you want to always generate all CSS variables, you can use the static theme o
     @apply rounded-xl;
   }
 
-  .skeleton-primary{
+  .skeleton-primary {
     @apply bg-primary-100;
     @apply dark:bg-primary-900/50;
   }
 
-  .skeleton-secondary{
+  .skeleton-secondary {
     @apply bg-secondary-100;
     @apply dark:bg-secondary-900/50;
   }
 
-  .skeleton-tertiary{
-    @apply bg-tertiary-100 ;
-    @apply dark:bg-tertiary-900/50 ;
+  .skeleton-tertiary {
+    @apply bg-tertiary-100;
+    @apply dark:bg-tertiary-900/50;
   }
 
-  .skeleton-quaternary{
+  .skeleton-quaternary {
     @apply bg-quaternary-100;
     @apply dark:bg-quaternary-900/50;
   }
 
-  .skeleton-quinary{
+  .skeleton-quinary {
     @apply bg-quinary-100;
-    @apply dark:bg-quinary-900/50; 
+    @apply dark:bg-quinary-900/50;
   }
 
   .settings-fab {
@@ -174,7 +218,7 @@ If you want to always generate all CSS variables, you can use the static theme o
   .chatbot-fab {
     @apply bg-gradient-to-r from-secondary-300 to-tertiary-100 shadow-xl;
     @apply dark:from-quaternary-900 dark:to-secondary-900;
-    @apply animate-bounce hover:animate-none
+    @apply animate-bounce hover:animate-none;
   }
 
   .settings-fab-icon {
@@ -248,7 +292,7 @@ If you want to always generate all CSS variables, you can use the static theme o
 
   .profile-contact-card-icon {
     @apply !w-6 !h-6 !text-2xl;
-    @apply !text-secondary-700 dark:!text-secondary-300
+    @apply !text-secondary-700 dark:!text-secondary-300;
   }
 
   .profile-contact-card-text {
@@ -355,7 +399,7 @@ If you want to always generate all CSS variables, you can use the static theme o
     @apply relative;
     @apply rounded-xl;
   }
-  
+
   .profile-header-bg-img {
     @apply absolute inset-0 w-full h-full;
     @apply object-cover object-center rounded-2xl;
@@ -368,14 +412,7 @@ If you want to always generate all CSS variables, you can use the static theme o
   }
 
   .profile-header-picture {
-    @apply w-32 h-32 rounded-xl object-cover shadow-lg;
     @apply border-4 border-t-primary-500 border-r-quaternary-500 border-b-tertiary-500 border-l-secondary-500;
-    @apply group-hover:scale-105 transition-transform;
-    @apply transition-opacity duration-3500; 
-  }
-  
-  .profile-header-picture-skeleton {
-    @apply bg-primary-100 dark:bg-primary-900 animate-pulse; 
   }
 
   .profile-header-status {
@@ -420,7 +457,7 @@ If you want to always generate all CSS variables, you can use the static theme o
 
   .profile-language-card-icon {
     @apply !w-6 !h-6 !text-xl;
-    @apply !text-primary-700 dark:!text-primary-300
+    @apply !text-primary-700 dark:!text-primary-300;
   }
 
   .profile-language-card-name {
@@ -461,6 +498,90 @@ If you want to always generate all CSS variables, you can use the static theme o
 
   .profile-card-shadow {
     @apply shadow-[7px_0_7px_-7px] inset-shadow-[-7px_0_7px_-7px];
+  }
+
+  .chatbot-page-container {
+    @apply h-[100dvh];
+    @apply  overflow-hidden;
+    @apply bg-white/30 dark:bg-black/70;
+  }
+
+  .chatbot-page-header-footer {
+    @apply bg-white/50 dark:bg-black/50 backdrop-blur-md border-b border-white/8;
+  }
+
+  .chatbot-page-content {
+    @apply bg-gradient-to-br;
+    @apply from-purple-700/10 via-transparent to-green-700/9;
+    @apply dark:from-purple-500/5 dark:via-transparent to-green-500/9;
+  }
+
+  .chatbot-header-picture {
+    @apply border-4 border-t-primary-500 border-r-secondary-500 border-b-primary-500 border-l-tertiary-500;
+  }
+
+  .chatbot-header-message-number {
+    @apply text-[10px] font-bold;
+    @apply text-primary-900 dark:text-primary-500;
+  }
+
+  .chatbot-header-progress-bar-container {
+    @apply h-1.5 w-full overflow-hidden rounded-full;
+    @apply bg-black/10 dark:bg-white/5;
+  }
+
+  .chatbot-header-progress-bar-content {
+    @apply h-full rounded-full;
+    @apply transition-all duration-500;
+    @apply ltr:bg-gradient-to-r rtl:bg-gradient-to-l;
+    @apply from-primary-300 via-secondary-300 to-tertiary-500;
+    @apply dark:from-primary-500 dark:via-secondary-500 dark:to-tertiary-700;
+  }
+
+  .chatbot-message-container {
+    @apply rounded-2xl overflow-hidden;
+    @apply dark:shadow-[0_4px_20px_-5px_theme(colors.primary.900),0_4px_20px_-5px_theme(colors.secondary.700)];
+    @apply shadow-[0_4px_20px_-5px_theme(colors.primary.300),0_4px_20px_-5px_theme(colors.secondary.300)];
+    @apply relative p-[1.5px] rounded-2xl;
+    @apply bg-gradient-to-r rtl:bg-gradient-to-l;
+    @apply from-primary-500 via-secondary-500 to-tertiary-500;
+    @apply dark:from-primary-700 dark:via-secondary-700 dark:to-tertiary-700;
+  }
+
+  .chatbot-message-container-current-user {
+    @apply ltr:rounded-tr-none rtl:rounded-tl-none;
+  }
+
+  .chatbot-message-container-not-current-user {
+    @apply ltr:rounded-tl-none rtl:rounded-tr-none;
+  }
+
+  .chatbot-message-content {
+    @apply px-4 py-3 rounded-[inherit];
+    @apply bg-white/95 dark:bg-black/95;
+  }
+
+  .chatbot-message-text {
+    @apply text-sm leading-relaxed;
+  }
+
+  .chatbot-message-timestamp {
+    @apply text-[9px] font-medium tracking-wider ml-1 uppercase;
+    @apply text-black/70 dark:text-white/70;
+  }
+
+  .chatbot-input-send-btn {
+    @apply !h-12 !w-9;
+    @apply !rounded-full;
+    @apply bg-gradient-to-br rtl:bg-gradient-to-bl;
+    @apply from-primary-300/70 to-tertiary-300/70;
+    @apply dark:from-primary-900  dark:to-tertiary-900;
+    @apply active:scale-90 transition-transform shrink-0;
+  }
+
+  .chatbot-input-send-btn-icon {
+    @apply font-bold;
+    @apply !text-quaternary-700 dark:!text-white;
   }
 
   @keyframes soft-shake {
