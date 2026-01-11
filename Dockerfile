@@ -40,11 +40,11 @@ WORKDIR /usr/app
 COPY --from=builder /app/dist/app-fa002 /usr/app/dist/app-fa002
 
 # In server.ts file, default port is 4000
-EXPOSE 4000
+EXPOSE 80
 
 # Set health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://localhost:4000/ || exit 1
+  CMD wget --no-verbose --tries=1 --spider http://localhost:80/ || exit 1
 
 # Start node_server
 CMD ["node", "dist/app-fa002/server/server.mjs"]
