@@ -40,6 +40,7 @@ WORKDIR /usr/app
 COPY --from=builder /app/dist/app-fa002 /usr/app/dist/app-fa002
 
 # In server.ts file, default port is 4000
+ENV PORT=80
 EXPOSE 80
 
 # Set health check
