@@ -8,10 +8,11 @@ on:
 
 # Defines two custom environment variables for the workflow.
 # These are used for the ECR repository,
-# AWS region.
+# AWS region and image tag.
 env:
   AWS_REGION:  ${{ vars.AWS_REGION }}
   ECR_REPOSITORY:  ${{ vars.ECR_REPOSITORY }}
+  IMAGE_TAG: ${{ github.repository }}-${{ github.sha }}
 
 # There is a single job in this workflow. 
 # It's configured to run on the latest available version of Ubuntu.
@@ -39,7 +40,6 @@ jobs:
         id: build-image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          IMAGE_TAG: ${{ github.sha }}
         run: |
           # Build a docker container and
           # push it to ECR
