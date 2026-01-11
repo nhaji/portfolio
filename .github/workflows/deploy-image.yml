@@ -18,6 +18,7 @@ env:
 # It's configured to run on the latest available version of Ubuntu.
 jobs:
   build-and-push-image:
+    name: Publish
     runs-on: ubuntu-latest
     # Sets the permissions granted to the `GITHUB_TOKEN` for the actions
     # in this job.
