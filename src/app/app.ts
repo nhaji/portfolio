@@ -7,8 +7,8 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { SettingsComponent } from './shared/components/settings/settings.component';
 import { PreventService } from './core/services/prevent.service';
 import { ChatbotFabComponent } from './features/chatbot/components/chatbot-fab/chatbot-fab.component';
-import { AppStore } from './shared/stores/app.store';
 import { CHATBOT_ROUTE } from './features/chatbot/chatbot.routes';
+import { AppStore } from './app.store';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +25,8 @@ export class App implements OnInit {
   private themeService = inject(ThemeService);
   private preventService = inject(PreventService);
   private appStore = inject(AppStore);
+
+  connection = this.appStore.connectRessource;
 
   isDarkMode = this.themeService.getIsDarkMode();
   currentLang = this.langService.getCurrentLang();

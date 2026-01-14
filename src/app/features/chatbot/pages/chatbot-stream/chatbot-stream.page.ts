@@ -41,7 +41,7 @@ export class ChatbotStreamPage implements OnInit{
   }
 
   private loadData(){
-    this.translate.get(('CHATBOT.INITIAL_MESSAGE')).subscribe((res: string) => {
+    this.translate.stream(('CHATBOT.INITIAL_MESSAGE')).subscribe((res: string) => {
       const initialMessage = {
         id: new Date().getTime(),
         isCurrentUser: false,
@@ -50,7 +50,7 @@ export class ChatbotStreamPage implements OnInit{
       };
       this.messages.update((currentMessages) => [...currentMessages, initialMessage]);
     });
-    this.translate.get(('CHATBOT.DEFAULT_MESSAGE')).subscribe((res: string) => {
+    this.translate.stream(('CHATBOT.DEFAULT_MESSAGE')).subscribe((res: string) => {
       this.defaultMessage = {
         id: new Date().getTime(),
         isCurrentUser: false,
