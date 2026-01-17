@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, output, signal } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 import { form, Field } from '@angular/forms/signals';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -14,6 +14,7 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class ChatbotInputComponent {
   sendMessage = output<string>();
+  disabled = input.required<boolean>();
   messageModel = signal({ text: '' });
   messageForm = form(this.messageModel);
 

@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { catchError, Observable, of, throwError } from 'rxjs';
+import { catchError, map, Observable, of, throwError } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -19,7 +19,8 @@ export class HttpService {
     });
     return this.http
       .get<T>(url, { headers })
-      .pipe(catchError((error: HttpErrorResponse) => this.handleError<T>(error)));
+      .pipe(
+        catchError((error: HttpErrorResponse) => this.handleError<T>(error)));
   }
 
   protected post<T>(url: string, data: any, withTranslate: boolean = false): Observable<T> {
@@ -28,7 +29,9 @@ export class HttpService {
     });
     return this.http
       .post<T>(url, data, { headers })
-      .pipe(catchError((error: HttpErrorResponse) => this.handleError<T>(error)));
+      .pipe(
+        map((response: any) => response.data),
+        catchError((error: HttpErrorResponse) => this.handleError<T>(error)));
   }
 
   private handleError<T>(error: HttpErrorResponse) {
