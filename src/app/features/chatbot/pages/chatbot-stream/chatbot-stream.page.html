@@ -2,19 +2,19 @@
   <div class="chatbot-page-header-footer px-4 py-4 shrink-0 z-50">
     <app-chatbot-header
       [maxMessages]="maxAllowedMessages()"
-      [usedMessages]="usedMessages()"
+      [usedMessages]="store.usedMessages()"
     ></app-chatbot-header>
   </div>
 
   <div class="flex-1 overflow-y-auto flex flex-col-reverse px-4 py-6 no-scrollbar">
     <div class="max-w-xl mx-auto w-full space-y-8">
-      @for (msg of messages(); track msg.id) {
+      @for (msg of store.messages(); track msg.id) {
       <app-chatbot-message [message]="msg"></app-chatbot-message>
       }
     </div>
   </div>
 
   <div class="chatbot-page-header-footer px-4 py-4 shrink-0 z-50">
-    <app-chatbot-input (sendMessage)="onSendMessage($event)"></app-chatbot-input>
+    <app-chatbot-input [disabled]="store.status() !== 'authorized'" (sendMessage)="onSendMessage($event)"></app-chatbot-input>
   </div>
 </div>

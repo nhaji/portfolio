@@ -6,7 +6,7 @@
       class="chatbot-message-container"
     >
       <div class="px-4 py-3 chatbot-message-content">
-        <p class="chatbot-message-text" [innerHTML]="message().message"></p>
+        <p class="chatbot-message-text" [innerHTML]="message().text"></p>
       </div>
     </div>
     <span class="chatbot-message-timestamp">{{ message().timestamp | date:'h:mm a' }}</span>

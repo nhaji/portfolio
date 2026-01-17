@@ -26,8 +26,6 @@ export class App implements OnInit {
   private preventService = inject(PreventService);
   private appStore = inject(AppStore);
 
-  connection = this.appStore.connectRessource;
-
   isDarkMode = this.themeService.getIsDarkMode();
   currentLang = this.langService.getCurrentLang();
   languages: Array<Language> = this.langService.getLanguages();
@@ -38,6 +36,7 @@ export class App implements OnInit {
   ngOnInit() {
     this.preventService.enable();
     this.isChatbotRoute = this.appStore.isChatbotRoute;
+    this.appStore.connect();
   }
 
   navigateToChatbot() {
