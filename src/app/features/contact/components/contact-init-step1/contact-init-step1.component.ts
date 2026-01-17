@@ -28,7 +28,7 @@ export class ContactInitStep1Component {
   onNext() {
     if (this.contactForm().invalid()) {
       this.contactForm.email().markAsTouched()
-      this.snackBar.open("Please enter a correct email", this.translate.instant('COMMON.CLOSE'), {
+      this.snackBar.open(this.translate.instant('CONTACT.EMAIL_ERROR'), this.translate.instant('COMMON.CLOSE'), {
         duration: 5000,
         horizontalPosition: 'end',
         verticalPosition: 'top',

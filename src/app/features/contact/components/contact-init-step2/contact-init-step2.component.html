@@ -1,7 +1,7 @@
 <div class="contact-init-step-container animate-fade-in flex flex-col sm:gap-0 gap:7 pt-15 sm:pt-0">
   <div class="w-full flex text-center py-7">
     <p class="pt-3 max-w-md mx-auto">
-      Personalize your experience. Feel free to skip this for now.
+      {{ 'CONTACT.OPTIONAL_HEADER' | translate }}
     </p>
   </div>
 
@@ -10,8 +10,7 @@
       <input
         class="sm:py-3 sm:px-5 py-5 px-7"
         [field]="contactForm.fullName!"
-        placeholder="Enter your Full name"
-        type="email"
+        [placeholder]="'CONTACT.FULLNAME_PLACEHOLDER' | translate"
       />
     </app-input>
   </div>
@@ -20,8 +19,7 @@
       <input
         class="sm:py-3 sm:px-5 py-5 px-7"
         [field]="contactForm.phone!"
-        placeholder="Enter your Phone"
-        type="email"
+        [placeholder]="'CONTACT.PHONE_PLACEHOLDER' | translate"
       />
     </app-input>
   </div>
@@ -29,11 +27,15 @@
   <div class="justify-self-end w-full sm:py-7 py-12 mt-auto flex flex-col items-center gap-3">
     <app-button
       class="w-full max-w-lg"
-      text="Next Step"
+      [text]="'CONTACT.NEXT' | translate"
       [primary]="true"
       icon="arrow_forward_ios"
       (clicked)="onNext()"
     ></app-button>
-    <app-button class="w-full max-w-lg" text="Skip for now" (clicked)="onNext()"></app-button>
+    <app-button
+      class="w-full max-w-lg"
+      [text]="'CONTACT.SKIP' | translate"
+      (clicked)="onNext()"
+    ></app-button>
   </div>
 </div>
