@@ -1,7 +1,7 @@
 <div class="contact-init-step-container animate-fade-in flex flex-col sm:gap-0 gap:7 pt-15 sm:pt-0">
   <div class="w-full flex text-center py-7">
     <p class="pt-3 max-w-md mx-auto">
-      Your request is almost ready. Feel free to express yourself.
+      {{'CONTACT.MESSAGE_HEADER' | translate}}
     </p>
   </div>
 
@@ -10,7 +10,7 @@
       <textarea
         (keydown.enter)="onNext()"
         [field]="contactForm.message"
-        placeholder="Type your message here..."
+        [placeholder]="'CONTACT.MESSAGE_PLACEHOLDER' | translate"
         rows="7"
       ></textarea>
     </app-input>
@@ -20,7 +20,7 @@
     <app-button
       class="w-full max-w-lg"
       [primary]="true"
-      text="Send Your Request"
+      [text]="'CONTACT.SEND' | translate"
       icon="send"
       (clicked)="onNext()"
     ></app-button>

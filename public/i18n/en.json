@@ -36,6 +36,19 @@
     "INITIAL_MESSAGE": "👋 Hi there how can I help you",
     "DEFAULT_MESSAGE": "This feature is not yet available, but it will be soon 🎉"
   },
+  "CONTACT": {
+    "NEXT": "Next Step",
+    "SKIP": "Skip for now",
+    "SEND": "Send Your Request",
+    "EMAIL_HEADER": "Please enter your email address so we can stay in touch 👋",
+    "EMAIL_PLACEHOLDER": "Enter your email",
+    "EMAIL_ERROR": "Please enter a correct email.",
+    "OPTIONAL_HEADER": "Personalize your experience. Feel free to skip this for now 🫠​",
+    "FULLNAME_PLACEHOLDER": "Enter your Full name",
+    "PHONE_PLACEHOLDER": "Enter your Phone",
+    "MESSAGE_HEADER": " Your request is almost ready. Feel free to express yourself 🎉",
+    "MESSAGE_PLACEHOLDER": "Type your message here..."
+  },
   "LANGUAGE": {
     "NATIVE": "Native",
     "FLUENT": "Fluent",
