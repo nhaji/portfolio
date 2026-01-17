@@ -1,0 +1,11 @@
+  <button
+    (click)="onClick()"
+    class="button w-full max-w-lg sm:py-3 py-5 flex items-center justify-center gap-3"
+    [class.button-primary]="primary()"
+  >
+    @if(text()){
+    <span class="tracking-wider">{{ text() }}</span>
+    } @if(icon()){
+    <mat-icon>{{ icon() }}</mat-icon>
+    }
+  </button>

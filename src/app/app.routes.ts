@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { PROFILE_ROUTE } from './features/profile/profile.routes';
 import { CHATBOT_ROUTE } from './features/chatbot/chatbot.routes';
+import { CONTACT_ROUTE } from './features/contact/contact.routes';
 
 export const routes: Routes = [
     {
@@ -15,6 +16,10 @@ export const routes: Routes = [
       {
         path: CHATBOT_ROUTE,
         loadChildren: () => import('./features/chatbot/chatbot.routes').then(m => m.routes),
+      },
+      {
+        path: CONTACT_ROUTE,
+        loadChildren: () => import('./features/contact/contact.routes').then(m => m.routes),
       },
       {
         path: '**',
