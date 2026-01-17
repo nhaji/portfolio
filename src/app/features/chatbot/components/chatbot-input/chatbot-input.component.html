@@ -1,5 +1,5 @@
 <div class="max-w-xl mx-auto flex items-center gap-3">
-  <app-input class="flex-1">
+  <app-input class="flex-1" [rounded]="true">
     <input
       [field]="messageForm.text"
       (keydown.enter)="onSendMessage()"

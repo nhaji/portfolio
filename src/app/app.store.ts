@@ -3,6 +3,7 @@ import { AppService } from './app-service';
 import { Event, NavigationEnd, Router } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CHATBOT_ROUTE } from './features/chatbot/chatbot.routes';
+import { PROFILE_ROUTE } from './features/profile/profile.routes';
 
 @Injectable({
   providedIn: 'root',
@@ -14,15 +15,15 @@ export class AppStore {
   private service = inject(AppService);
   private router = inject(Router);
 
-  isChatbotRoute = signal<boolean>(false);
+  showOptions = signal<boolean>(false);
 
   constructor() {
     this.router.events.pipe(takeUntilDestroyed()).subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
-        if (event.url === `/${CHATBOT_ROUTE}`) {
-          this.isChatbotRoute.set(true);
+        if (event.url.startsWith(`/${PROFILE_ROUTE}`)) {
+          this.showOptions.set(true);
         } else {
-          this.isChatbotRoute.set(false);
+          this.showOptions.set(false);
         }
       }
     });

@@ -1,0 +1,39 @@
+<div class="contact-init-page-container flex flex-col items-center">
+  <div class="w-full max-w-2xl flex flex-col min-h-screen items-center px-6 md:px-8">
+    <!-- Header -->
+    <div class="w-full flex items-center sm:py-0 py-7 justify-between">
+      <button (click)="prev()" class="flex items-center">
+        <mat-icon class="contact-init-page-previous-btn-icon">arrow_back_ios</mat-icon>
+      </button>
+      <app-progress-indicator
+        class="w-full"
+        [showStepNumber]="false"
+        [stepCount]="3"
+        [currentStep]="currentStep()"
+      ></app-progress-indicator>
+    </div>
+
+    <!-- Content Switch -->
+    <div class="w-full flex-1 flex flex-col">
+      @switch (currentStep()) { @case (1) {
+      <app-contact-init-step1
+        class="flex-1 flex justify-center"
+        [(contact)]="contactModel"
+        (next)="next()"
+      />
+      } @case (2) {
+      <app-contact-init-step2
+        [(contact)]="contactModel"
+        (next)="next()"
+        class="flex-1 flex justify-center"
+      />
+      } @case (3) {
+      <app-contact-init-step3
+        [(contact)]="contactModel"
+        (next)="next()"
+        class="flex-1 flex justify-center"
+      />
+      } }
+    </div>
+  </div>
+</div>

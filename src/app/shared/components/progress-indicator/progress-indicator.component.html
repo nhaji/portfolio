@@ -1,0 +1,16 @@
+<div class="w-full flex flex-col items-center">
+  <div class="flex w-full flex-row items-center justify-center gap-3 py-6">
+    @for (step of steps(); track step) {
+        <div
+          [class.progress-indicator-completed-step]="currentStep() >= step"
+          [class.progress-indicator-active-step]="currentStep() === step"
+          class="progress-indicator-step"
+        ></div>
+      }
+  </div>
+  @if(showStepNumber()){
+  <span class="progress-indicator-text"
+    >Step {{ currentStep() }} of 3 </span
+  >
+  }
+</div>

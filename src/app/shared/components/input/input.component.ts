@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './input.component.css',
 })
 export class InputComponent {
+
+  rounded = input<boolean>(false);
+  error = input<boolean>(false);
 
 }

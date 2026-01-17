@@ -18,7 +18,7 @@ import { AppStore } from './app.store';
 })
 export class App implements OnInit {
   protected readonly currentYear = new Date().getFullYear();
-  protected isChatbotRoute = signal<boolean>(false);
+  protected showOptions = signal<boolean>(false);
 
   private router = inject(Router);
   private langService = inject(LanguageService);
@@ -35,7 +35,7 @@ export class App implements OnInit {
 
   ngOnInit() {
     this.preventService.enable();
-    this.isChatbotRoute = this.appStore.isChatbotRoute;
+    this.showOptions = this.appStore.showOptions;
     this.appStore.connect();
   }
 

@@ -2,7 +2,7 @@
   <main class="flex-grow relative">
     <router-outlet></router-outlet>
 
-    @if(!isChatbotRoute()){
+    @if(showOptions()){
     <app-chatbot-fab (onClick)="navigateToChatbot()"></app-chatbot-fab>
 
     <app-settings
@@ -16,7 +16,7 @@
     }
   </main>
 
-  @if(!isChatbotRoute()){
+  @if(showOptions()){
   <footer class="app-footer bg-surface-variant text-on-surface-variant">
     © {{ 'APP.FOOTER_TEXT' | translate }} {{ currentYear }}
   </footer>
