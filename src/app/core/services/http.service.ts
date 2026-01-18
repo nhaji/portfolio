@@ -1,8 +1,9 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { catchError, map, Observable, of, throwError } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TranslateService } from '@ngx-translate/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
@@ -11,9 +12,14 @@ export class HttpService {
   private http = inject(HttpClient);
   private snackBar = inject(MatSnackBar);
   private translate = inject(TranslateService);
+  //TODO : remove plateform management when fixing hydratation strategy
+  private platformId = inject(PLATFORM_ID);
   static readonly TRANSLATE_REQUIRE_HEADER = 'X-Translate-Required';
 
   protected get<T>(url: string, withTranslate: boolean = false): Observable<T> {
+    if (!isPlatformBrowser(this.platformId)) {
+      return of({} as T);
+    }
     const headers = new HttpHeaders({
       [HttpService.TRANSLATE_REQUIRE_HEADER]: withTranslate.toString(),
     });
@@ -24,6 +30,9 @@ export class HttpService {
   }
 
   protected post<T>(url: string, data: any, withTranslate: boolean = false): Observable<T> {
+     if (!isPlatformBrowser(this.platformId)) {
+      return of({} as T);
+    }
     const headers = new HttpHeaders({
       [HttpService.TRANSLATE_REQUIRE_HEADER]: withTranslate.toString(),
     });
