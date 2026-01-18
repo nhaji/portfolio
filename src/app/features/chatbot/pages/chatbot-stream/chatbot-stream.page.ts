@@ -3,14 +3,14 @@ import { Component, computed, inject, OnInit, Signal, signal } from '@angular/co
 import { ChatbotInputComponent } from '../../components/chatbot-input/chatbot-input.component';
 import { ChatbotMessageComponent } from '../../components/chatbot-message/chatbot-message.component';
 import { ChatbotHeaderComponent } from '../../components/chatbot-header/chatbot-headercomponent';
-import { MessageModel } from '../../models/message.model';
 import { ChatbotStatus, ChatBotStore } from '../../stores/chat-bot.store';
 import { Router } from '@angular/router';
 import { CONTACT_ROUTE } from '../../../contact/contact.routes';
+import { LoaderComponent } from '../../../../shared/components/loader/loader.component';
 
 @Component({
   selector: 'app-chatbot-stream',
-  imports: [CommonModule, ChatbotInputComponent, ChatbotMessageComponent, ChatbotHeaderComponent],
+  imports: [CommonModule, ChatbotInputComponent, ChatbotMessageComponent, ChatbotHeaderComponent, LoaderComponent],
   templateUrl: './chatbot-stream.page.html',
   styleUrl: './chatbot-stream.page.css',
 })
@@ -20,6 +20,7 @@ export class ChatbotStreamPage implements OnInit {
 
   maxAllowedMessages = signal<number>(7);
   isAuthorized : Signal<boolean> = computed(() => this.store.status() === ChatbotStatus.AUTHORIZED);
+  isSending : Signal<boolean> = computed(() => this.store.status() === ChatbotStatus.SENDING);
 
   ngOnInit(): void {
     this.store.init();
