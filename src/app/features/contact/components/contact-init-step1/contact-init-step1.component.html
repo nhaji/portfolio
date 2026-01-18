@@ -19,7 +19,7 @@
       class="w-full max-w-lg"
       [primary]="true"
       [text]="'CONTACT.NEXT' | translate"
-      icon="arrow_forward_ios"
+      [icon]="isRtl() ? 'arrow_back_ios' : 'arrow_forward_ios'"
       (clicked)="onNext()"
     ></app-button>
   </div>

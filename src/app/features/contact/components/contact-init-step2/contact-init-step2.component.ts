@@ -1,10 +1,11 @@
-import { Component, model, output } from '@angular/core';
+import { Component, inject, model, output } from '@angular/core';
 import { ContactModel } from '../../models/contact.model';
 import { Field, form } from '@angular/forms/signals';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { InputComponent } from '../../../../shared/components/input/input.component';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
+import { DirectionService } from '../../../../core/services/direction.service';
 
 @Component({
   selector: 'app-contact-init-step2',
@@ -13,9 +14,12 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
   styleUrl: './contact-init-step2.component.css',
 })
 export class ContactInitStep2Component {
+  private dir = inject(DirectionService);
+
   contact = model.required<ContactModel>();
   contactForm = form(this.contact);
   next = output<void>();
+  isRtl = this.dir.isRtl;
 
   onNext() {
     this.next.emit();
