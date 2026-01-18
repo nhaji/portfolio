@@ -1,16 +1,11 @@
 import { Directionality } from '@angular/cdk/bidi';
-import { inject, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, Signal, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DirectionService {
-
-  isRtl = signal<boolean>(false);
   private dir = inject(Directionality);
+  isRtl: Signal<boolean> = computed(() => this.dir.valueSignal() === 'rtl');
 
-  constructor(){
-    this.isRtl.set(this.dir.value === 'rtl')
-  }
-  
 }

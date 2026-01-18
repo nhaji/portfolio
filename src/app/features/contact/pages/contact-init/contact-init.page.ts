@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, inject, signal } from '@angular/core';
+import { AfterContentChecked, Component, computed, inject, OnChanges, OnInit, Signal, signal } from '@angular/core';
 import { ContactInitStep1Component } from '../../components/contact-init-step1/contact-init-step1.component';
 import { ContactInitStep2Component } from '../../components/contact-init-step2/contact-init-step2.component';
 import { ContactInitStep3Component } from '../../components/contact-init-step3/contact-init-step3.component';
@@ -23,13 +23,13 @@ import { PROFILE_ROUTE } from '../../../profile/profile.routes';
   templateUrl: './contact-init.page.html',
   styleUrl: './contact-init.page.css',
 })
-export class ContactInitPage {
+export class ContactInitPage{
   private router = inject(Router);
   private dir = inject(DirectionService);
 
   currentStep = signal<number>(1);
   contactModel = signal<ContactModel>({ email: '', phone: '', fullName: '', message: '' });
-  isRtl = this.dir.isRtl;
+  isRtl : Signal<boolean> = this.dir.isRtl;
 
   stepTitle = computed(() => {
     switch (this.currentStep()) {
@@ -59,6 +59,9 @@ export class ContactInitPage {
   next() {
     if (this.currentStep() < 3) {
       this.currentStep.update((s) => s + 1);
+    }
+    else {
+      this.router.navigate([PROFILE_ROUTE]);
     }
   }
 }

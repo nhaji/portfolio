@@ -246,25 +246,33 @@ If you want to always generate all CSS variables, you can use the static theme o
     @apply text-[10px] font-bold text-white tracking-[0.2em] uppercase;
   }
 
-  .settings-fab {
-    @apply bg-gradient-to-r from-secondary-300 to-tertiary-100 shadow-xl;
-    @apply dark:from-quaternary-900 dark:to-secondary-900;
-    @apply hover:shadow-2xl hover:scale-110 transition-all duration-300;
-  }
 
   .chatbot-fab {
-    @apply bg-gradient-to-r from-secondary-300 to-tertiary-100 shadow-xl;
-    @apply dark:from-quaternary-900 dark:to-secondary-900;
+    @apply bg-gradient-to-br shadow-xl !bg-transparent backdrop-blur-lg;
+    @apply from-secondary-700/30 via-primary-300/30 to-quaternary-700/30;
+    @apply dark:from-quaternary-950/50 dark:via-primary-900/50 dark:to-quaternary-900/50;
     @apply animate-bounce hover:animate-none;
   }
 
+  .chatbot-fab-icon {
+    @apply !text-quaternary-700 dark:!text-primary-50;
+  }
+
+  .settings-fab {
+    @apply bg-gradient-to-br shadow-xl !bg-transparent backdrop-blur-lg;
+    @apply from-primary-300/30 via-quaternary-500/30 to-secondary-500/30;
+    @apply dark:from-primary-950/30 dark:via-quaternary-900/50 dark:to-secondary-900/30;
+    @apply hover:shadow-2xl hover:scale-110 transition-all duration-300;
+  }
+
   .settings-fab-icon {
-    @apply !text-quaternary-700 dark:!text-primary-500;
+    @apply !text-quaternary-700 dark:!text-quaternary-100;
   }
 
   .settings-panel {
     @apply rounded-2xl shadow-2xl backdrop-blur-lg border border-white/20;
-    @apply bg-gradient-to-br from-primary-100 via-tertiary-100 to-secondary-100;
+    @apply bg-gradient-to-br;
+    @apply from-primary-100/70 via-quaternary-300/50 to-secondary-100/70;
     @apply dark:from-primary-900 dark:via-quaternary-900/50 dark:to-secondary-900/50;
   }
 
@@ -298,7 +306,8 @@ If you want to always generate all CSS variables, you can use the static theme o
 
   .settings-language-button-active {
     @apply !shadow-md;
-    @apply !bg-gradient-to-r !from-primary-300 !to-secondary-300 !text-gray-700;
+    @apply !bg-gradient-to-r;
+    @apply !from-primary-300 !to-quaternary-300 !text-gray-700;
     @apply dark:!from-quaternary-900 dark:!to-primary-900 dark:!text-white;
   }
 
@@ -620,8 +629,8 @@ If you want to always generate all CSS variables, you can use the static theme o
     @apply !h-12 !w-9;
     @apply !rounded-full;
     @apply bg-gradient-to-br rtl:bg-gradient-to-bl;
-    @apply from-primary-300/70 to-quaternary-300/70;
-    @apply dark:from-primary-900  dark:to-quaternary-900;
+    @apply from-primary-300 via-quaternary-200 to-secondary-300;
+    @apply dark:from-primary-900 dark:via-quaternary-900 dark:to-secondary-900;
     @apply active:scale-90 transition-transform shrink-0;
   }
 

@@ -87,7 +87,7 @@ export class ChatBotStore {
         text: res,
         timestamp: new Date(),
       };
-      this.messages.update((currentMessages) => [...currentMessages, initialMessage]);
+      this.messages.update(() => [initialMessage]);
     });
     this.translate.stream('CHATBOT.DEFAULT_MESSAGE').subscribe((res: string) => {
       this.defaultMessage = {
