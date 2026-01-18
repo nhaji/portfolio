@@ -7,8 +7,8 @@ import { ContactModel } from '../../models/contact.model';
 import { ProgressIndicatorComponent } from '../../../../shared/components/progress-indicator/progress-indicator.component';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
-import { CHATBOT_ROUTE } from '../../../chatbot/chatbot.routes';
 import { DirectionService } from '../../../../core/services/direction.service';
+import { PROFILE_ROUTE } from '../../../profile/profile.routes';
 
 @Component({
   selector: 'app-contact-init',
@@ -24,14 +24,12 @@ import { DirectionService } from '../../../../core/services/direction.service';
   styleUrl: './contact-init.page.css',
 })
 export class ContactInitPage {
-
   private router = inject(Router);
   private dir = inject(DirectionService);
-  
+
   currentStep = signal<number>(1);
   contactModel = signal<ContactModel>({ email: '', phone: '', fullName: '', message: '' });
   isRtl = this.dir.isRtl;
-
 
   stepTitle = computed(() => {
     switch (this.currentStep()) {
@@ -50,8 +48,12 @@ export class ContactInitPage {
     if (this.currentStep() > 1) {
       this.currentStep.update((s) => s - 1);
     } else {
-      this.router.navigate([CHATBOT_ROUTE]);
+      this.router.navigate([PROFILE_ROUTE]);
     }
+  }
+
+  skip() {
+    this.router.navigate([PROFILE_ROUTE]);
   }
 
   next() {

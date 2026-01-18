@@ -3,7 +3,9 @@
     <!-- Header -->
     <div class="w-full flex items-center sm:py-0 py-7 justify-between">
       <button (click)="prev()" class="flex items-center">
-        <mat-icon class="contact-init-page-previous-btn-icon">{{isRtl() ? 'arrow_forward_ios' : 'arrow_back_ios'}}</mat-icon>
+        <mat-icon class="contact-init-page-previous-btn-icon">{{
+          currentStep() === 1 ? 'home' : isRtl() ? 'arrow_forward_ios' : 'arrow_back_ios'
+        }}</mat-icon>
       </button>
       <app-progress-indicator
         class="w-full"
@@ -20,6 +22,7 @@
         class="flex-1 flex justify-center"
         [(contact)]="contactModel"
         (next)="next()"
+        (skip)="skip()"
       />
       } @case (2) {
       <app-contact-init-step2
