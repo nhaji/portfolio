@@ -19,7 +19,6 @@ export type ChatbotStatus = typeof ChatbotStatus[keyof typeof ChatbotStatus];
   providedIn: 'root',
 })
 export class ChatBotStore {
-  readonly status = signal<ChatbotStatus>(ChatbotStatus.IDLE);
   private defaultMessage: MessageModel | undefined;
 
   private destroyRef = inject(DestroyRef);
@@ -28,6 +27,7 @@ export class ChatBotStore {
 
   messages = signal<MessageModel[]>([]);
   usedMessages = signal<number>(0);
+  status = signal<ChatbotStatus>(ChatbotStatus.IDLE);
 
   constructor() {
     this.loadData();
