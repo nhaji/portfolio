@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { InputComponent } from '../../../../shared/components/input/input.component';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DirectionService } from '../../../../core/services/direction.service';
 
 @Component({
   selector: 'app-contact-init-step1',
@@ -16,9 +17,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ContactInitStep1Component {
   private snackBar = inject(MatSnackBar);
   private translate = inject(TranslateService);
+  private dir = inject(DirectionService);
 
   contact = model.required<ContactModel>();
   next = output<void>();
+  isRtl = this.dir.isRtl;
 
   contactForm = form(this.contact, (schemaPath) => {
     required(schemaPath.email);
