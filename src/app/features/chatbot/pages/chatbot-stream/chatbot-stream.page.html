@@ -15,6 +15,6 @@
   </div>
 
   <div class="chatbot-page-header-footer px-4 py-4 shrink-0 z-50">
-    <app-chatbot-input [disabled]="store.status() !== 'authorized'" (sendMessage)="onSendMessage($event)"></app-chatbot-input>
+    <app-chatbot-input [disabled]="!isAuthorized()" (sendMessage)="onSendMessage($event)"></app-chatbot-input>
   </div>
 </div>

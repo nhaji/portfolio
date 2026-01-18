@@ -14,13 +14,13 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class ChatbotInputComponent {
   sendMessage = output<string>();
-  disabled = input.required<boolean>();
+  disabled = input<boolean>(false);
   messageModel = signal({ text: '' });
   messageForm = form(this.messageModel);
 
   onSendMessage() {
     const messageText = this.messageForm.text().value();
-    if (messageText && messageText.trim().length > 0) {
+    if ((messageText && messageText.trim().length > 0) || this.disabled()) {
       this.sendMessage.emit(messageText);
       this.messageForm.text().value.set('');
     }
