@@ -77,11 +77,11 @@ If you want to always generate all CSS variables, you can use the static theme o
     scrollbar-width: none; /* Firefox */
   }
 
-  .input-error{
+  .input-error {
     animation: shake 0.5s ease-in-out infinite;
   }
 
-  .input-border { 
+  .input-border {
     @apply -inset-[1px];
     @apply blur-[1px];
     @apply bg-gradient-to-r rtl:bg-gradient-to-l;
@@ -129,6 +129,31 @@ If you want to always generate all CSS variables, you can use the static theme o
     @apply shadow-[0_0px_15px_1px_theme(colors.quaternary.500)];
     @apply dark:bg-primary-900/70 dark:text-quaternary-100;
     @apply dark:shadow-[0_0px_15px_1px_theme(colors.quaternary.900)];
+  }
+
+  .loader {
+    @apply bg-gradient-to-r rounded-full;
+    @apply animate-ping;
+  }
+
+  .loader-first {
+    @apply from-tertiary-300 to-tertiary-700;
+    animation-delay: 0s
+  }
+
+  .loader-second {
+    @apply from-primary-300 to-primary-700;
+    animation-delay: 0.25s
+  }
+
+  .loader-third {
+    @apply from-secondary-300 to-secondary-700;
+    animation-delay: 0.50s
+  }
+
+  .loader-fourth {
+    @apply from-quaternary-300 to-quaternary-700;
+    animation-delay: 0.75s
   }
 
   .image {
@@ -246,16 +271,15 @@ If you want to always generate all CSS variables, you can use the static theme o
     @apply text-[10px] font-bold text-white tracking-[0.2em] uppercase;
   }
 
-
   .chatbot-fab {
     @apply bg-gradient-to-br shadow-xl !bg-transparent backdrop-blur-lg;
     @apply from-secondary-700/30 via-primary-300/30 to-quaternary-700/30;
-    @apply dark:from-quaternary-950/50 dark:via-primary-900/50 dark:to-quaternary-900/50;
-    @apply animate-bounce hover:animate-none;
+    @apply dark:from-quaternary-950/50 dark:via-secondary-900/50 dark:to-quaternary-900/50;
+    @apply animate-spin hover:animate-none;
   }
 
   .chatbot-fab-icon {
-    @apply !text-quaternary-700 dark:!text-primary-50;
+    @apply !text-quaternary-700 dark:!text-white;
   }
 
   .settings-fab {
@@ -266,7 +290,7 @@ If you want to always generate all CSS variables, you can use the static theme o
   }
 
   .settings-fab-icon {
-    @apply !text-quaternary-700 dark:!text-quaternary-100;
+    @apply !text-quaternary-700 dark:!text-white;
   }
 
   .settings-panel {
