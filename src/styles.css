@@ -105,6 +105,7 @@ If you want to always generate all CSS variables, you can use the static theme o
     @apply text-black/70 dark:text-white/70;
     @apply placeholder:text-black/50 dark:placeholder:text-white/20;
     @apply focus:ring-0;
+    @apply focus:outline-none;
   }
 
   .input-container textarea {
@@ -115,6 +116,7 @@ If you want to always generate all CSS variables, you can use the static theme o
     @apply text-black/70 dark:text-white/70;
     @apply placeholder:text-black/50 dark:placeholder:text-white/20;
     @apply focus:ring-0;
+    @apply focus:outline-none;
   }
 
   .button {
@@ -138,22 +140,22 @@ If you want to always generate all CSS variables, you can use the static theme o
 
   .loader-first {
     @apply from-tertiary-300 to-tertiary-700;
-    animation-delay: 0s
+    animation-delay: 0s;
   }
 
   .loader-second {
     @apply from-primary-300 to-primary-700;
-    animation-delay: 0.25s
+    animation-delay: 0.25s;
   }
 
   .loader-third {
     @apply from-secondary-300 to-secondary-700;
-    animation-delay: 0.50s
+    animation-delay: 0.5s;
   }
 
   .loader-fourth {
     @apply from-quaternary-300 to-quaternary-700;
-    animation-delay: 0.75s
+    animation-delay: 0.75s;
   }
 
   .image {
