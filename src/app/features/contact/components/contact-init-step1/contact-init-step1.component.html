@@ -14,7 +14,7 @@
     </app-input>
   </div>
 
-  <div class="justify-self-end w-full sm:py-7 py-12 mt-auto flex flex-col items-center">
+  <div class="justify-self-end w-full sm:py-7 py-12 mt-auto flex flex-col items-center gap-3">
     <app-button
       class="w-full max-w-lg"
       [primary]="true"
@@ -22,5 +22,10 @@
       [icon]="isRtl() ? 'arrow_back_ios' : 'arrow_forward_ios'"
       (clicked)="onNext()"
     ></app-button>
+    <app-button
+    class="w-full max-w-lg"
+    [text]="'CONTACT.SKIP' | translate"
+    (clicked)="onSkip()"
+  ></app-button>
   </div>
 </div>

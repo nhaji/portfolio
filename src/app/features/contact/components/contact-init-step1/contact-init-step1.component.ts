@@ -21,6 +21,7 @@ export class ContactInitStep1Component {
 
   contact = model.required<ContactModel>();
   next = output<void>();
+  skip = output<void>();
   isRtl = this.dir.isRtl;
 
   contactForm = form(this.contact, (schemaPath) => {
@@ -41,5 +42,9 @@ export class ContactInitStep1Component {
     else{
       this.next.emit();
     }
+  }
+
+  onSkip(){
+    this.skip.emit();
   }
 }
