@@ -1,4 +1,4 @@
-import { Component, inject, model, output } from '@angular/core';
+import { Component, inject, model, output, Signal } from '@angular/core';
 import { ContactModel } from '../../models/contact.model';
 import { Field, form } from '@angular/forms/signals';
 import { CommonModule } from '@angular/common';
@@ -19,10 +19,9 @@ export class ContactInitStep2Component {
   contact = model.required<ContactModel>();
   contactForm = form(this.contact);
   next = output<void>();
-  isRtl = this.dir.isRtl;
+  isRtl: Signal<boolean> = this.dir.isRtl;
 
   onNext() {
     this.next.emit();
   }
-
 }

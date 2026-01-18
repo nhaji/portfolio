@@ -1,4 +1,4 @@
-import { Component, inject, model, output } from '@angular/core';
+import { Component, inject, model, output, Signal } from '@angular/core';
 import { ContactModel } from '../../models/contact.model';
 import { email, Field, form, required } from '@angular/forms/signals';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -22,7 +22,7 @@ export class ContactInitStep1Component {
   contact = model.required<ContactModel>();
   next = output<void>();
   skip = output<void>();
-  isRtl = this.dir.isRtl;
+  isRtl: Signal<boolean> = this.dir.isRtl;
 
   contactForm = form(this.contact, (schemaPath) => {
     required(schemaPath.email);
@@ -31,20 +31,23 @@ export class ContactInitStep1Component {
 
   onNext() {
     if (this.contactForm().invalid()) {
-      this.contactForm.email().markAsTouched()
-      this.snackBar.open(this.translate.instant('CONTACT.EMAIL_ERROR'), this.translate.instant('COMMON.CLOSE'), {
-        duration: 5000,
-        horizontalPosition: 'end',
-        verticalPosition: 'top',
-        panelClass: ['error-snackbar'],
-      });
-    }
-    else{
+      this.contactForm.email().markAsTouched();
+      this.snackBar.open(
+        this.translate.instant('CONTACT.EMAIL_ERROR'),
+        this.translate.instant('COMMON.CLOSE'),
+        {
+          duration: 5000,
+          horizontalPosition: 'end',
+          verticalPosition: 'top',
+          panelClass: ['error-snackbar'],
+        }
+      );
+    } else {
       this.next.emit();
     }
   }
 
-  onSkip(){
+  onSkip() {
     this.skip.emit();
   }
 }
