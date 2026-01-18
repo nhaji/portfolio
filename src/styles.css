@@ -664,7 +664,8 @@ If you want to always generate all CSS variables, you can use the static theme o
   }
 
   .contact-init-page-container {
-    @apply min-h-screen  overflow-x-hidden;
+    @apply h-[100dvh];
+    @apply overflow-hidden;
     @apply text-black dark:text-white;
     @apply bg-gradient-to-r rtl:bg-gradient-to-l;
     @apply from-primary-300/50 via-secondary-300/50 to-quaternary-300/50;
