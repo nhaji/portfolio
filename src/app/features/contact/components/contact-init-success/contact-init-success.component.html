@@ -1,0 +1,16 @@
+<div class="contact-init-step-container animate-fade-in flex flex-col sm:gap-0 gap:7 pt-15 sm:pt-0">
+    <div class="w-full flex text-center py-7">
+      <p class="pt-3 max-w-md mx-auto">{{'CONTACT.SUCCESS_HEADER' | translate }}</p>
+    </div>
+  
+    <div class="justify-self-end w-full sm:py-7 py-12 mt-auto flex flex-col items-center gap-3">
+      <app-button
+        class="w-full max-w-lg"
+        [primary]="true"
+        [text]="'CONTACT.BACK_HOME' | translate"
+        icon="home"
+        (clicked)="onNext()"
+      ></app-button>
+    </div>
+  </div>
+  

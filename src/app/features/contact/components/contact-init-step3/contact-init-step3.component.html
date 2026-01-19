@@ -17,6 +17,7 @@
   </div>
 
   <div class="justify-self-end w-full sm:py-7 py-12 mt-auto flex flex-col items-center">
+    @if(!sending()){
     <app-button
       class="w-full max-w-lg"
       [primary]="true"
@@ -24,5 +25,9 @@
       icon="mark_email_read"
       (clicked)="onNext()"
     ></app-button>
+  }
+    @else{
+    <app-loader></app-loader>
+    }
   </div>
 </div>

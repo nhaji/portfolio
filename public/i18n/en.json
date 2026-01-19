@@ -40,6 +40,7 @@
     "NEXT": "Next Step",
     "SKIP": "Skip for now",
     "SEND": "Send Your Request",
+    "BACK_HOME": "Go Back Home",
     "EMAIL_HEADER": "Sadly there is no more messages for today 🥺 Please enter your email address so we can stay in touch 👋",
     "EMAIL_PLACEHOLDER": "Enter your email",
     "EMAIL_ERROR": "Please enter a correct email.",
@@ -47,7 +48,8 @@
     "FULLNAME_PLACEHOLDER": "Enter your Full name",
     "PHONE_PLACEHOLDER": "Enter your Phone",
     "MESSAGE_HEADER": " Your request is almost ready. Feel free to express yourself 🎉",
-    "MESSAGE_PLACEHOLDER": "Type your message here..."
+    "MESSAGE_PLACEHOLDER": "Type your message here...",
+    "SUCCESS_HEADER": "Congratulations! Your request has been successfully sent 🎉 We will contact you shortly 🎉"
   },
   "LANGUAGE": {
     "NATIVE": "Native",
