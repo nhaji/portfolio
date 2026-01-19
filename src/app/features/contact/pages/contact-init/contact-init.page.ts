@@ -9,27 +9,33 @@ import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { DirectionService } from '../../../../core/services/direction.service';
 import { PROFILE_ROUTE } from '../../../profile/profile.routes';
+import { ContactStatus, ContactStore } from '../../stores/contact.store';
+import { ContactInitSuccessComponent } from '../../components/contact-init-success/contact-init-success.component';
 
 @Component({
   selector: 'app-contact-init',
   imports: [
     CommonModule,
+    MatIconModule,
     ProgressIndicatorComponent,
     ContactInitStep1Component,
     ContactInitStep2Component,
     ContactInitStep3Component,
-    MatIconModule,
+    ContactInitSuccessComponent
   ],
   templateUrl: './contact-init.page.html',
   styleUrl: './contact-init.page.css',
 })
-export class ContactInitPage{
+export class ContactInitPage implements OnInit{
   private router = inject(Router);
   private dir = inject(DirectionService);
+  store = inject(ContactStore);
 
   currentStep = signal<number>(1);
   contactModel = signal<ContactModel>({ email: '', phone: '', fullName: '', message: '' });
   isRtl : Signal<boolean> = this.dir.isRtl;
+  isSending : Signal<boolean> = computed(() => this.store.status() === ContactStatus.SENDING);
+  isSent : Signal<boolean> = computed(() => this.store.status() === ContactStatus.SENT);
 
   stepTitle = computed(() => {
     switch (this.currentStep()) {
@@ -44,6 +50,10 @@ export class ContactInitPage{
     }
   });
 
+  ngOnInit(){
+    this.store.status.set(ContactStatus.IDLE);
+  }
+
   prev() {
     if (this.currentStep() > 1) {
       this.currentStep.update((s) => s - 1);
@@ -57,11 +67,17 @@ export class ContactInitPage{
   }
 
   next() {
+    if(this.isSent()) {
+      this.router.navigate([PROFILE_ROUTE]);
+      return;
+    }
     if (this.currentStep() < 3) {
       this.currentStep.update((s) => s + 1);
+      return;
     }
-    else {
-      this.router.navigate([PROFILE_ROUTE]);
+    else if(this.currentStep() === 3){
+      this.store.send(this.contactModel());
+      return;
     }
   }
 }

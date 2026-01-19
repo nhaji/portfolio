@@ -40,6 +40,7 @@
     "NEXT": "Etape suivante",
     "SKIP": "Ignorer pour le moment",
     "SEND": "Envoyer votre demande",
+    "BACK_HOME": "Page principale",
     "EMAIL_HEADER": "Malheureusement, il n'y a plus de messages pour aujourd'hui 🥺 Veuillez saisir votre adresse e-mail afin que nous puissions rester en contact 👋",
     "EMAIL_PLACEHOLDER": "Votre adresse e-mail",
     "EMAIL_ERROR": "Veuillez saisir une adresse e-mail valide.",
@@ -47,7 +48,8 @@
     "FULLNAME_PLACEHOLDER": "Votre nom complet",
     "PHONE_PLACEHOLDER": "Votre numéro de téléphone",
     "MESSAGE_HEADER": "Vous y êtes presque ! N'hésitez pas à vous exprimer librement🎉",
-    "MESSAGE_PLACEHOLDER": "Votre message par là..."
+    "MESSAGE_PLACEHOLDER": "Votre message par là...",
+    "SUCCESS_HEADER": "Félicitations! Votre demande a bien été envoyée 🎉 On se tiendras au jus prochainement 🎉"
   },
   "LANGUAGE": {
    "NATIVE": "Natif",
