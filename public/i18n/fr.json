@@ -33,7 +33,7 @@
   "CHATBOT": {
     "MESSAGES": "Messages",
     "PLACEHOLDER": "Posez votre question et vous trouverez votre réponse...",
-    "INITIAL_MESSAGE": "👋 Salut, comment puis-je vous aider",
+    "INITIAL_MESSAGE": "Salut ! Ravie de te voir. 😊 ✨ <br><br>🧠 Discutons intelligemment ! 7 messages géniaux par jour : utilisons-les à bon escient !<br><br>✉️ Prise de contact : clique sur l’icône en haut pour partager tes contacts instantanément.<br><br>🤔 Curieux(se) d’en savoir plus sur moi ? Un click sur ma photo et nous y voilà !<br><br> Tellement hâte de t’aider ! C’est parti ! 🚀",
         "DEFAULT_MESSAGE": "Cette fonctionnalité n'est pas encore disponible, mais elle le sera bientôt 🎉"
   },
   "CONTACT": {

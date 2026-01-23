@@ -33,7 +33,7 @@
   "CHATBOT": {
     "MESSAGES": "Messages",
     "PLACEHOLDER": "Ask your question and you will find your answer...",
-    "INITIAL_MESSAGE": "👋 Hi there how can I help you",
+    "INITIAL_MESSAGE": "Hey there! Awesome to see you. 😊 ✨ <br><br>🧠 Chat Smart! 7 fantastic messages a day—let's make them useful!<br><br>✉️ Send a Note Click the icon up top to share your contacts instantly.<br><br>🤔 Curious about me? Tap my picture for the fun details!<br><br>So excited to help you out! Let's go! 🚀",
     "DEFAULT_MESSAGE": "This feature is not yet available, but it will be soon 🎉"
   },
   "CONTACT": {

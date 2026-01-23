@@ -586,12 +586,12 @@ If you want to always generate all CSS variables, you can use the static theme o
   }
 
   .chatbot-page-header-footer {
-    @apply bg-white/50 dark:bg-black/10 backdrop-blur-md border-b border-white/8;
+    @apply bg-white/10 dark:bg-black/10 backdrop-blur-md border-b border-white/8;
   }
 
   .chatbot-page-content {
     @apply bg-gradient-to-br;
-    @apply from-primary-700/30 via-secondary-700/10 to-quaternary-900;
+    @apply from-primary-500/10 via-secondary-700/10 to-quaternary-900;
     @apply dark:from-primary-500/5 dark:via-secondary-500/5 to-quaternary-500/9;
   }
 
@@ -599,6 +599,7 @@ If you want to always generate all CSS variables, you can use the static theme o
     @apply border-4;
     @apply border-t-primary-300 border-r-secondary-300 border-b-primary-300 border-l-quaternary-300;
     @apply dark:border-t-primary-700 dark:border-r-secondary-700 dark:border-b-primary-700 dark:border-l-quaternary-700;
+    @apply hover:cursor-pointer;
   }
 
   .chatbot-header-message-number {
@@ -619,13 +620,18 @@ If you want to always generate all CSS variables, you can use the static theme o
     @apply dark:from-primary-700/70 dark:via-secondary-700/70 dark:to-quaternary-900/70;
   }
 
+  .chatbot-header-contact-icon{
+    @apply !text-primary-300 dark:!text-primary-500;
+    @apply hover:cursor-pointer;
+  }
+
   .chatbot-message-container {
     @apply rounded-2xl overflow-hidden;
     @apply dark:shadow-[0_4px_20px_-5px_theme(colors.primary.950),0_4px_20px_-5px_theme(colors.secondary.950)];
-    @apply shadow-[0_4px_20px_-5px_theme(colors.primary.300),0_4px_20px_-5px_theme(colors.secondary.300)];
+    @apply shadow-[0_4px_20px_-5px_theme(colors.primary.100),0_4px_20px_-5px_theme(colors.secondary.100)];
     @apply relative p-[1.5px] rounded-2xl;
     @apply bg-gradient-to-r rtl:bg-gradient-to-l;
-    @apply from-primary-500 via-secondary-500 to-quaternary-500;
+    @apply from-primary-500/50 via-secondary-500/50 to-quaternary-500/50;
     @apply dark:from-primary-700/70 dark:via-secondary-700/70 dark:to-quaternary-900/70;
   }
 
@@ -639,7 +645,7 @@ If you want to always generate all CSS variables, you can use the static theme o
 
   .chatbot-message-content {
     @apply px-4 py-3 rounded-[inherit];
-    @apply bg-white/95 dark:bg-black/95;
+    @apply bg-white/95 dark:bg-gray-950/95;
   }
 
   .chatbot-message-text {

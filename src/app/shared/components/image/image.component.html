@@ -3,6 +3,7 @@
   <div class="image image-skeleton"></div>
   }
   <img
+    (click)="onImageClick()"
     [src]="imgUrl()"
     alt="Profile Picture"
     (load)="onImageLoad()"

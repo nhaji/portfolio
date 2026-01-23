@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, input, signal } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 
 @Component({
   selector: 'app-image',
@@ -11,6 +11,7 @@ export class ImageComponent {
   imgUrl = input.required<string>();
   borderClass = input.required<string>();
   isImageLoaded = signal<boolean>(false);
+  click = output();
 
   onImageLoad(): void {
     this.isImageLoaded.set(true);
@@ -18,5 +19,9 @@ export class ImageComponent {
 
   onImageError(): void {
     this.isImageLoaded.set(true);
+  }
+
+  onImageClick(): void {
+    this.click.emit()
   }
 }
