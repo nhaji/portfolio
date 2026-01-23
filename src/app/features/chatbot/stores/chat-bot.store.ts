@@ -20,6 +20,7 @@ export type ChatbotStatus = typeof ChatbotStatus[keyof typeof ChatbotStatus];
 })
 export class ChatBotStore {
   private defaultMessage: MessageModel | undefined;
+  private errorMessage: MessageModel | undefined;
 
   private destroyRef = inject(DestroyRef);
   private service = inject(ChatbotService);
@@ -28,6 +29,7 @@ export class ChatBotStore {
   messages = signal<MessageModel[]>([]);
   usedMessages = signal<number>(0);
   status = signal<ChatbotStatus>(ChatbotStatus.IDLE);
+  maxAllowedMessages = signal<number>(7);
 
   constructor() {
     this.loadData();
@@ -45,10 +47,12 @@ export class ChatBotStore {
           } else {
             this.status.set(ChatbotStatus.UNAUTHORIZED);
           }
+          this.maxAllowedMessages.set(data.maxAllowedMessages)
           this.usedMessages.set(data.usedMessages);
         },
         error: () => this.status.set(ChatbotStatus.ERROR),
-      });
+      },
+      );
   }
 
   send(text: string) {
@@ -61,26 +65,33 @@ export class ChatBotStore {
     this.messages.update((currentMessages) => [...currentMessages, newMessage]);
     this.status.set(ChatbotStatus.SENDING);
     this.service
-      .send({text: text})
+      .send({ text: text })
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (data) => {
-          if (data.status.isAllowed) {
-            this.status.set(ChatbotStatus.AUTHORIZED);
+          if (data) {
+            if (data.status.isAllowed) {
+              this.status.set(ChatbotStatus.AUTHORIZED);
+            } else {
+              this.status.set(ChatbotStatus.UNAUTHORIZED);
+            }
+            this.usedMessages.set(data.status.usedMessages);
+            const receivedMessage = {
+              id: new Date().getTime(),
+              isCurrentUser: data.isUser,
+              text: data.text,
+              timestamp: new Date(),
+            };
+            this.messages.update((currentMessages) => [...currentMessages, receivedMessage]);
+            this.usedMessages.set(data.status.usedMessages);
           } else {
-            this.status.set(ChatbotStatus.UNAUTHORIZED);
+            this.status.set(ChatbotStatus.ERROR);
           }
-          this.usedMessages.set(data.status.usedMessages);
-          const receivedMessage = {
-            id: new Date().getTime(),
-            isCurrentUser: data.isUser,
-            text: data.text,
-            timestamp: new Date(),
-          };
-          this.messages.update((currentMessages) => [...currentMessages, receivedMessage]);
-          this.usedMessages.set(data.status.usedMessages);
         },
-        error: () => this.status.set(ChatbotStatus.ERROR),
+        error: () => {
+          this.status.set(ChatbotStatus.ERROR);
+          this.messages.update((currentMessages) => [...currentMessages, this.errorMessage!]);
+          }
       });
   }
 
@@ -96,6 +107,14 @@ export class ChatBotStore {
     });
     this.translate.stream('CHATBOT.DEFAULT_MESSAGE').subscribe((res: string) => {
       this.defaultMessage = {
+        id: new Date().getTime(),
+        isCurrentUser: false,
+        text: res,
+        timestamp: new Date(),
+      };
+    });
+    this.translate.stream('CHATBOT.ERROR_MESSAGE').subscribe((res: string) => {
+      this.errorMessage = {
         id: new Date().getTime(),
         isCurrentUser: false,
         text: res,
