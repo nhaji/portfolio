@@ -18,6 +18,6 @@ export class ChatbotService extends HttpService {
   }
 
   send(message: MessageModel): Observable<MessageDetailModel> {
-    return this.post<MessageDetailModel>(`ai-message`, message)
+    return this.post<MessageDetailModel>(`ai-message`, message, false, 90000);
   }
 }

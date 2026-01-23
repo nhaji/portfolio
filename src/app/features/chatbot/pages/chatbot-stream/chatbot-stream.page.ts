@@ -20,8 +20,13 @@ export class ChatbotStreamPage implements OnInit {
   private router = inject(Router);
 
   maxAllowedMessages = signal<number>(7);
-  isAuthorized : Signal<boolean> = computed(() => this.store.status() === ChatbotStatus.AUTHORIZED);
-  isSending : Signal<boolean> = computed(() => this.store.status() === ChatbotStatus.SENDING);
+  isAuthorized: Signal<boolean> = computed(() =>
+    this.store.status() === (
+      ChatbotStatus.AUTHORIZED ||
+      ChatbotStatus.SENDING ||
+      ChatbotStatus.ERROR)
+  );
+  isSending: Signal<boolean> = computed(() => this.store.status() === ChatbotStatus.SENDING);
 
   ngOnInit(): void {
     this.store.init();
@@ -36,11 +41,11 @@ export class ChatbotStreamPage implements OnInit {
     }
   }
 
-  onImageClicked(): void{
+  onImageClicked(): void {
     this.router.navigate([PROFILE_ROUTE]);
   }
 
-  onContactClicked(): void{
+  onContactClicked(): void {
     this.router.navigate([CONTACT_ROUTE]);
   }
 }

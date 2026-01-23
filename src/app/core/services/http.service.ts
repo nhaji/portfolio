@@ -1,9 +1,14 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { catchError, map, Observable, of, throwError } from 'rxjs';
+import { catchError, map, Observable, of, throwError, timeout } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
+
+interface HttpError {
+  messageKey: string;
+  originalError: any;
+}
 
 @Injectable({
   providedIn: 'root',
@@ -29,15 +34,23 @@ export class HttpService {
         catchError((error: HttpErrorResponse) => this.handleError<T>(error)));
   }
 
-  protected post<T>(url: string, data: any, withTranslate: boolean = false): Observable<T> {
-     if (!isPlatformBrowser(this.platformId)) {
+  protected post<T>(url: string, data: any, withTranslate: boolean = false, timeout?: number): Observable<T> {
+    if (!isPlatformBrowser(this.platformId)) {
       return of({} as T);
     }
+
     const headers = new HttpHeaders({
       [HttpService.TRANSLATE_REQUIRE_HEADER]: withTranslate.toString(),
     });
+    const config: any = {
+      headers: headers
+    };
+    if (timeout) {
+      config.timeout = timeout;
+    }
+
     return this.http
-      .post<T>(url, data, { headers })
+      .post<T>(url, data, config)
       .pipe(
         map((response: any) => response.data),
         catchError((error: HttpErrorResponse) => this.handleError<T>(error)));
@@ -58,10 +71,9 @@ export class HttpService {
       });
     });
 
-    console.error('HTTP Error:', error);
-
-    // Return empty observable of the expected type
-    // Use appropriate fallback based on expected type
-    return of(null as T);
+    return throwError(() => ({
+      messageKey :messageKey,
+      originalError: error,
+    } as HttpError));
   }
 }
