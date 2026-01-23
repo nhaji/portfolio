@@ -5,11 +5,15 @@
         borderClass="chatbot-header-picture"
         class="w-15 h-15"
         imgUrl="assets/img/Photo.avif"
+        (click)="onImageClick()"
       ></app-image>
     </div>
-    <span class="chatbot-header-message-number"
-      >{{ usedMessages() }} / {{ maxMessages() }} {{'CHATBOT.MESSAGES' | translate }}</span
-    >
+    <div class="gap-3 flex flex-col h-full justify-between items-end">
+      <mat-icon (click)="onContactClick()" class="chatbot-header-contact-icon self-end">mark_email_unread</mat-icon>
+      <span class="chatbot-header-message-number">
+        {{ usedMessages() }} / {{ maxMessages() }} {{'CHATBOT.MESSAGES' | translate }}
+      </span>
+    </div>
   </div>
   <div class="chatbot-header-progress-bar-container">
     <div class="chatbot-header-progress-bar-content" [style.width.%]="progressPercentage()"></div>

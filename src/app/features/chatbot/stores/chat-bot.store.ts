@@ -71,8 +71,13 @@ export class ChatBotStore {
             this.status.set(ChatbotStatus.UNAUTHORIZED);
           }
           this.usedMessages.set(data.status.usedMessages);
-      
-          this.messages.update((currentMessages) => [...currentMessages, this.defaultMessage!]);
+          const receivedMessage = {
+            id: new Date().getTime(),
+            isCurrentUser: data.isUser,
+            text: data.text,
+            timestamp: new Date(),
+          };
+          this.messages.update((currentMessages) => [...currentMessages, receivedMessage]);
           this.usedMessages.set(data.status.usedMessages);
         },
         error: () => this.status.set(ChatbotStatus.ERROR),

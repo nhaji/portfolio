@@ -3,6 +3,8 @@
     <app-chatbot-header
       [maxMessages]="maxAllowedMessages()"
       [usedMessages]="store.usedMessages()"
+      (imageClick)="onImageClicked()"
+      (contactClick)="onContactClicked()"
     ></app-chatbot-header>
   </div>
 

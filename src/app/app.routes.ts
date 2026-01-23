@@ -6,7 +6,7 @@ import { CONTACT_ROUTE } from './features/contact/contact.routes';
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: PROFILE_ROUTE,
+        redirectTo: CHATBOT_ROUTE,
         pathMatch: 'full'
       },
       {
@@ -23,6 +23,6 @@ export const routes: Routes = [
       },
       {
         path: '**',
-        redirectTo: PROFILE_ROUTE
+        redirectTo:CHATBOT_ROUTE
       },
 ];
