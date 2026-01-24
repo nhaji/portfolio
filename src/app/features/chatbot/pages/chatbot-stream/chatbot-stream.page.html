@@ -1,5 +1,5 @@
 <div class="chatbot-page-container chatbot-page-content flex flex-col">
-  <div class="chatbot-page-header-footer px-4 py-4 shrink-0 z-50">
+  <div class="chatbot-page-header-footer fixed top-0 left-0 right-0 px-4 py-4 z-50">
     <app-chatbot-header
       [maxMessages]="maxAllowedMessages()"
       [usedMessages]="store.usedMessages()"
@@ -8,7 +8,7 @@
     ></app-chatbot-header>
   </div>
 
-  <div class="flex-1 overflow-y-auto flex flex-col-reverse px-4 py-6 no-scrollbar">
+  <div class="no-scrollbar flex-1 overflow-y-auto flex flex-col-reverse fixed right-3 left-3 top-0 bottom-0 pt-[18vh] sm:pt-[24vh] pb-[12vh] sm:pb-[18vh]">
     <div class="max-w-xl mx-auto w-full space-y-8">
       @for (msg of store.messages(); track msg.id) {
       <app-chatbot-message [message]="msg"></app-chatbot-message>
@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <div class="chatbot-page-header-footer px-4 py-4 shrink-0 z-50">
+  <div class="chatbot-page-header-footer fixed bottom-0 left-0 right-0 px-3 py-3 z-50">
     <app-chatbot-input
       [disabled]="!isAuthorized()"
       (sendMessage)="onSendMessage($event)"

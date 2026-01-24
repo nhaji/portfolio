@@ -1,42 +1,22 @@
-<div class="contact-init-step-container animate-fade-in flex flex-col sm:gap-0 gap:7 pt-15 sm:pt-0">
-  <div class="w-full flex text-center py-7">
-    <p class="pt-3 max-w-md mx-auto">
-      {{ 'CONTACT.OPTIONAL_HEADER' | translate }}
-    </p>
+<div class="contact-init-step-container animate-fade-in flex flex-col items-center pt-[3vh] sm:pt-0">
+  <div class="w-full max-w-md flex text-center">
+    {{ 'CONTACT.OPTIONAL_HEADER' | translate }}
   </div>
-
-  <div class="w-full">
-    <app-input>
-      <input
-        class="sm:py-3 sm:px-5 py-5 px-7"
-        [field]="contactForm.fullName!"
-        [placeholder]="'CONTACT.FULLNAME_PLACEHOLDER' | translate"
-      />
+  <div class="w-full max-w-md pt-27 pt-[9vh] pb-[9vh] sm:pt-[12vh] sm:pb-[21vh] flex flex-col gap-3">
+    <app-input class="w-full">
+      <input class="sm:py-3 sm:px-5 py-5 px-7" (keydown.enter)="focusNext()" [field]="contactForm.fullName!"
+        [placeholder]="'CONTACT.FULLNAME_PLACEHOLDER' | translate" />
     </app-input>
-  </div>
-  <div class="w-full pt-7 sm:pt-5">
-    <app-input>
-      <input
-        class="sm:py-3 sm:px-5 py-5 px-7"
-        (keydown.enter)="onNext()"
-        [field]="contactForm.phone!"
-        [placeholder]="'CONTACT.PHONE_PLACEHOLDER' | translate"
-      />
+    <app-input class="w-full">
+      <input #phoneInput class="sm:py-3 sm:px-5 py-5 px-7" (keydown.enter)="onNext()" [field]="contactForm.phone!"
+        [placeholder]="'CONTACT.PHONE_PLACEHOLDER' | translate" />
     </app-input>
   </div>
 
-  <div class="justify-self-end w-full sm:py-7 py-12 mt-auto flex flex-col items-center gap-3">
-    <app-button
-      class="w-full max-w-lg"
-      [text]="'CONTACT.NEXT' | translate"
-      [primary]="true"
-      [icon]="isRtl() ? 'arrow_back_ios' : 'arrow_forward_ios'"
-      (clicked)="onNext()"
-    ></app-button>
-    <app-button
-      class="w-full max-w-lg"
-      [text]="'CONTACT.SKIP' | translate"
-      (clicked)="onNext()"
-    ></app-button>
+  <div class="w-full max-w-md flex flex-col items-center">
+    <app-button class="w-full max-w-lg" [text]="'CONTACT.NEXT' | translate" [primary]="true"
+      [icon]="isRtl() ? 'arrow_back_ios' : 'arrow_forward_ios'" (clicked)="onNext()"></app-button>
+    <app-button class="w-full max-w-lg" [text]="'CONTACT.SKIP' | translate" (clicked)="onNext()"></app-button>
   </div>
+
 </div>
